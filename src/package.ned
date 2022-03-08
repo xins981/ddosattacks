@@ -1,0 +1,3 @@
+package ddosattacks;
+
+@license(LGPL);

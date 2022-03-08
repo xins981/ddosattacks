@@ -1,0 +1,561 @@
+file 31390 1646710124                                           
+version 2
+run General-0-20220308-11:28:11-95663
+attr configname General
+attr datetime 20220308-11:28:11
+attr experiment General
+attr inifile SimpleDropping.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network SimpleDropping
+attr processid 95663
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param *.numHosts 2
+param *.client[*].numApps 1
+param *.client[*].app[0].typename "\"TcpSessionApp\""
+param *.client[*].app[0].connectAddress "\"server\""
+param *.server.numApps 1
+param *.server.app[0].typename "\"TcpEchoApp\""
+param *.server.ipv4.ip.typename "\"DSAK_Ipv4\""
+param **.server.droppingAttack.active true
+param **.server.droppingAttack.startTime 0s
+param **.server.droppingAttack.endTime 50s
+param **.server.droppingAttack.droppingAttackProbability 0.8
+param *.visualizer.*.packetDropVisualizer.displayPacketDrops true
+param *.visualizer.*.packetDropVisualizer.labelFormat "\"name: %n; reason: %r;\""
+param *.visualizer.*.packetDropVisualizer.fadeOutTime 3s
+
+vector 0 SimpleDropping.client[0].tcp.conn-3 tcpRcvQueueBytes:vector ETV
+attr interpolationmode sample-hold
+vector 1 SimpleDropping.client[0].tcp.conn-3 rcvAdv:vector ETV
+attr interpolationmode sample-hold
+vector 2 SimpleDropping.client[0].tcp.conn-3 rcvWnd:vector ETV
+attr interpolationmode sample-hold
+vector 3 SimpleDropping.client[0].tcp.conn-3 sndAck:vector ETV
+attr interpolationmode sample-hold
+vector 4 SimpleDropping.client[1].tcp.conn-4 tcpRcvQueueBytes:vector ETV
+attr interpolationmode sample-hold
+vector 5 SimpleDropping.client[1].tcp.conn-4 rcvAdv:vector ETV
+attr interpolationmode sample-hold
+vector 6 SimpleDropping.client[1].tcp.conn-4 rcvWnd:vector ETV
+attr interpolationmode sample-hold
+vector 7 SimpleDropping.client[1].tcp.conn-4 sndAck:vector ETV
+attr interpolationmode sample-hold
+vector 8 SimpleDropping.client[0].ipv4.arp arpRequestSent:vector(packetBytes) ETV
+attr source arpRequestSent
+attr title "ARP request sent, vector(packetBytes)"
+vector 9 SimpleDropping.client[1].ipv4.arp arpRequestSent:vector(packetBytes) ETV
+attr source arpRequestSent
+attr title "ARP request sent, vector(packetBytes)"
+vector 10 SimpleDropping.client[0].eth[0].encap encapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, vector(packetBytes)"
+vector 11 SimpleDropping.client[1].eth[0].encap encapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, vector(packetBytes)"
+vector 12 SimpleDropping.client[0].eth[0].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 13 SimpleDropping.client[0].eth[0].mac.queue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 14 SimpleDropping.client[0].eth[0].mac.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 15 SimpleDropping.client[0].eth[0].mac.queue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 16 SimpleDropping.client[0].eth[0].mac.queue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 17 SimpleDropping.client[1].eth[0].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 18 SimpleDropping.client[1].eth[0].mac.queue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 19 SimpleDropping.client[1].eth[0].mac.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 20 SimpleDropping.client[1].eth[0].mac.queue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 21 SimpleDropping.client[1].eth[0].mac.queue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 22 SimpleDropping.client[0].eth[0].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 23 SimpleDropping.client[1].eth[0].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 24 SimpleDropping.switch.eth[0].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 25 SimpleDropping.switch.eth[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 26 SimpleDropping.switch.eth[1].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 27 SimpleDropping.switch.eth[1].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 28 SimpleDropping.switch.eth[1].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 29 SimpleDropping.switch.eth[1].mac.queue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 30 SimpleDropping.switch.eth[1].mac.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 31 SimpleDropping.switch.eth[1].mac.queue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 32 SimpleDropping.switch.eth[1].mac.queue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 33 SimpleDropping.switch.eth[2].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 34 SimpleDropping.switch.eth[2].mac.queue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 35 SimpleDropping.switch.eth[2].mac.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 36 SimpleDropping.switch.eth[2].mac.queue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 37 SimpleDropping.switch.eth[2].mac.queue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 38 SimpleDropping.switch.eth[0].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 39 SimpleDropping.switch.eth[0].mac.queue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 40 SimpleDropping.switch.eth[0].mac.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 41 SimpleDropping.switch.eth[0].mac.queue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 42 SimpleDropping.switch.eth[0].mac.queue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 43 SimpleDropping.switch.eth[2].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 44 SimpleDropping.router.eth[1].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 45 SimpleDropping.router.eth[1].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 46 SimpleDropping.router.eth[1].encap decapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, vector(packetBytes)"
+vector 47 SimpleDropping.router.ipv4.arp arpReplySent:vector(packetBytes) ETV
+attr source arpReplySent
+attr title "ARP replies sent, vector(packetBytes)"
+vector 48 SimpleDropping.router.eth[1].encap encapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, vector(packetBytes)"
+vector 49 SimpleDropping.router.eth[1].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 50 SimpleDropping.router.eth[1].mac.queue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 51 SimpleDropping.router.eth[1].mac.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 52 SimpleDropping.router.eth[1].mac.queue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 53 SimpleDropping.router.eth[1].mac.queue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 54 SimpleDropping.switch.eth[0].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 55 SimpleDropping.switch.eth[1].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 56 SimpleDropping.client[0].eth[0].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 57 SimpleDropping.client[0].eth[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 58 SimpleDropping.client[1].eth[0].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 59 SimpleDropping.client[1].eth[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 60 SimpleDropping.client[0].eth[0].encap decapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, vector(packetBytes)"
+vector 61 SimpleDropping.client[1].eth[0].encap decapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, vector(packetBytes)"
+vector 62 SimpleDropping.router.eth[1].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 63 SimpleDropping.switch.eth[2].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 64 SimpleDropping.switch.eth[2].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 65 SimpleDropping.router.ipv4.arp arpRequestSent:vector(packetBytes) ETV
+attr source arpRequestSent
+attr title "ARP request sent, vector(packetBytes)"
+vector 66 SimpleDropping.router.eth[0].encap encapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, vector(packetBytes)"
+vector 67 SimpleDropping.router.eth[0].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 68 SimpleDropping.router.eth[0].mac.queue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 69 SimpleDropping.router.eth[0].mac.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 70 SimpleDropping.router.eth[0].mac.queue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 71 SimpleDropping.router.eth[0].mac.queue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 72 SimpleDropping.router.eth[0].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 73 SimpleDropping.server.eth[0].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 74 SimpleDropping.server.eth[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 75 SimpleDropping.server.eth[0].encap decapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, vector(packetBytes)"
+vector 76 SimpleDropping.server.ipv4.arp arpReplySent:vector(packetBytes) ETV
+attr source arpReplySent
+attr title "ARP replies sent, vector(packetBytes)"
+vector 77 SimpleDropping.server.eth[0].encap encapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, vector(packetBytes)"
+vector 78 SimpleDropping.server.eth[0].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 79 SimpleDropping.server.eth[0].mac.queue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 80 SimpleDropping.server.eth[0].mac.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 81 SimpleDropping.server.eth[0].mac.queue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 82 SimpleDropping.server.eth[0].mac.queue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 83 SimpleDropping.server.eth[0].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 84 SimpleDropping.router.eth[0].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 85 SimpleDropping.router.eth[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 86 SimpleDropping.router.eth[0].encap decapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, vector(packetBytes)"
+vector 87 SimpleDropping.server.tcp.conn-2 rcvSeq:vector ETV
+attr interpolationmode sample-hold
+vector 88 SimpleDropping.server.tcp.conn-2 rcvAck:vector ETV
+attr interpolationmode sample-hold
+vector 89 SimpleDropping.server.tcp.conn-5 rcvAdv:vector ETV
+attr interpolationmode sample-hold
+vector 90 SimpleDropping.server.tcp.conn-5 sndWnd:vector ETV
+attr interpolationmode sample-hold
+vector 91 SimpleDropping.server.tcp.conn-5 tcpRcvQueueBytes:vector ETV
+attr interpolationmode sample-hold
+vector 92 SimpleDropping.server.tcp.conn-5 rcvWnd:vector ETV
+attr interpolationmode sample-hold
+vector 93 SimpleDropping.server.tcp.conn-5 sndAck:vector ETV
+attr interpolationmode sample-hold
+vector 94 SimpleDropping.server.tcp.conn-6 rcvAdv:vector ETV
+attr interpolationmode sample-hold
+vector 95 SimpleDropping.server.tcp.conn-6 sndWnd:vector ETV
+attr interpolationmode sample-hold
+vector 96 SimpleDropping.server.tcp.conn-6 tcpRcvQueueBytes:vector ETV
+attr interpolationmode sample-hold
+vector 97 SimpleDropping.server.tcp.conn-6 rcvWnd:vector ETV
+attr interpolationmode sample-hold
+vector 98 SimpleDropping.server.tcp.conn-6 sndAck:vector ETV
+attr interpolationmode sample-hold
+vector 99 SimpleDropping.client[0].tcp.conn-3 rcvSeq:vector ETV
+attr interpolationmode sample-hold
+vector 100 SimpleDropping.client[0].tcp.conn-3 rcvAck:vector ETV
+attr interpolationmode sample-hold
+vector 101 SimpleDropping.client[0].tcp.conn-3 sndWnd:vector ETV
+attr interpolationmode sample-hold
+vector 102 SimpleDropping.client[0].app[0] packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, vector(packetBytes)"
+vector 103 SimpleDropping.client[0].tcp.conn-3 sndNxt:vector ETV
+attr interpolationmode sample-hold
+vector 104 SimpleDropping.client[0].tcp.conn-3 unacked:vector ETV
+attr interpolationmode sample-hold
+vector 105 SimpleDropping.client[1].tcp.conn-4 rcvSeq:vector ETV
+attr interpolationmode sample-hold
+vector 106 SimpleDropping.client[1].tcp.conn-4 rcvAck:vector ETV
+attr interpolationmode sample-hold
+vector 107 SimpleDropping.client[1].tcp.conn-4 sndWnd:vector ETV
+attr interpolationmode sample-hold
+vector 108 SimpleDropping.client[1].app[0] packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, vector(packetBytes)"
+vector 109 SimpleDropping.client[1].tcp.conn-4 sndNxt:vector ETV
+attr interpolationmode sample-hold
+vector 110 SimpleDropping.client[1].tcp.conn-4 unacked:vector ETV
+attr interpolationmode sample-hold
+vector 111 SimpleDropping.server.tcp.conn-5 rcvSeq:vector ETV
+attr interpolationmode sample-hold
+vector 112 SimpleDropping.server.tcp.conn-5 rcvAck:vector ETV
+attr interpolationmode sample-hold
+vector 113 SimpleDropping.server.tcp.conn-5 unacked:vector ETV
+attr interpolationmode sample-hold
+vector 114 SimpleDropping.server.tcp.conn-6 rcvSeq:vector ETV
+attr interpolationmode sample-hold
+vector 115 SimpleDropping.server.tcp.conn-6 rcvAck:vector ETV
+attr interpolationmode sample-hold
+vector 116 SimpleDropping.server.tcp.conn-6 unacked:vector ETV
+attr interpolationmode sample-hold
+vector 117 SimpleDropping.server.ipv4.ip rcvdPkt:vector ETV
+attr interpolationmode none
+attr source packetReceived
+attr title "Number of packet received, vector"
+vector 118 SimpleDropping.server.ipv4.ip packetDropForwardingDisabled:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetDropReasonIsForwardingDisabled(packetDropped)
+attr title "packet drop: forwarding disabled, vector(packetBytes)"
+vector 119 SimpleDropping.client[0].tcp.conn-3 numRtos:vector ETV
+attr interpolationmode sample-hold
+vector 120 SimpleDropping.client[0].tcp.conn-3 ssthresh:vector ETV
+attr interpolationmode sample-hold
+vector 121 SimpleDropping.client[0].tcp.conn-3 cwnd:vector ETV
+attr interpolationmode sample-hold
+vector 122 SimpleDropping.client[1].tcp.conn-4 numRtos:vector ETV
+attr interpolationmode sample-hold
+vector 123 SimpleDropping.client[1].tcp.conn-4 ssthresh:vector ETV
+attr interpolationmode sample-hold
+vector 124 SimpleDropping.client[1].tcp.conn-4 cwnd:vector ETV
+attr interpolationmode sample-hold
+0	20895 68 5 286 1 4.000007512 4 0 0 0 0
+1	20963 111 5 286 1 4.000007512 5 7504 257506 1037528 265293670160
+2	21074 80 5 286 1 4.000007512 4 7504 7504 30016 225240064
+3	21154 83 5 286 1 4.000007512 4 0 250002 750006 187503000012
+4	21237 68 6 291 1 4.000008184 4 0 0 0 0
+5	21305 111 6 291 1 4.000008184 5 7504 257506 1037528 265293670160
+6	21416 80 6 291 1 4.000008184 4 7504 7504 30016 225240064
+7	21496 83 6 291 1 4.000008184 4 0 250002 750006 187503000012
+8	21579 9 7 7 1 1 1 28 28 28 784
+9	21588 9 8 8 1 1 1 28 28 28 784
+10	21597 99 9 288 1 4.000007512 5 28 576 1264 667872
+11	21696 100 10 293 1 4.000008184 5 28 576 1264 667872
+12	21796 100 11 289 1 4.000007512 5 46 594 1354 714996
+13	21896 100 11 289 1 4.000007512 5 64 594 1380 717960
+14	21996 186 11 289 1 4.000007512 10 0 1 5 5
+15	22182 100 11 289 1 4.000007512 5 64 594 1380 717960
+16	22282 100 11 289 1 4.000007512 5 0 6.72e-07 6.72e-07 4.51584e-13
+17	22382 100 12 294 1 4.000008184 5 46 594 1354 714996
+18	22482 100 12 294 1 4.000008184 5 64 594 1380 717960
+19	22582 186 12 294 1 4.000008184 10 0 1 5 5
+20	22768 100 12 294 1 4.000008184 5 64 594 1380 717960
+21	22868 100 12 294 1 4.000008184 5 0 6.72e-07 6.72e-07 4.51584e-13
+22	22968 106 15 296 1.000000576 4.000012328 5 64 594 1380 717960
+23	23074 106 16 302 1.000000576 4.000013 5 64 594 1380 717960
+24	23180 108 17 297 1.000000626 4.000012378 5 64 594 1380 717960
+25	23288 108 17 297 1.000000626 4.000012378 5 64 594 1380 717960
+26	23396 108 18 303 1.000000626 4.00001305 5 64 594 1380 717960
+27	23504 108 18 303 1.000000626 4.00001305 5 64 594 1380 717960
+28	23612 63 21 180 1.000000626 1.000007558 3 64 64 192 12288
+29	23675 63 21 180 1.000000626 1.000007558 3 64 64 192 12288
+30	23738 120 21 180 1.000000626 1.000007558 6 0 1 3 3
+31	23858 63 21 180 1.000000626 1.000007558 3 64 64 192 12288
+32	23921 60 21 180 1.000000626 1.000007558 3 0 0 0 0
+33	23981 216 22 305 1.000000626 4.00001305 10 64 594 2760 1435920
+34	24197 216 22 305 1.000000626 4.00001305 10 64 594 2760 1435920
+35	24413 405 22 308 1.000000626 4.000017194 20 0 1 10 10
+36	24818 217 22 308 1.000000626 4.000017194 10 64 594 2760 1435920
+37	25035 226 22 308 1.000000626 4.000017194 10 0 4.144e-06 8.864e-06 3.4677248e-11
+38	25261 64 23 152 1.000000626 1.000006886 3 64 64 192 12288
+39	25325 64 23 152 1.000000626 1.000006886 3 64 64 192 12288
+40	25389 122 23 152 1.000000626 1.000006886 6 0 1 3 3
+41	25511 64 23 152 1.000000626 1.000006886 3 64 64 192 12288
+42	25575 61 23 152 1.000000626 1.000006886 3 0 0 0 0
+43	25636 198 29 308 1.000001202 4.000017194 9 64 594 2166 1083084
+44	25834 175 30 270 1.000001252 1.000022828 8 64 594 1572 730248
+45	26009 175 30 270 1.000001252 1.000022828 8 64 594 1572 730248
+46	26184 175 31 272 1.000001252 1.000022828 8 46 576 1428 676248
+47	26359 42 32 55 1.000001252 1.000001924 2 28 28 56 1568
+48	26401 85 33 157 1.000001252 1.000006932 4 28 44 144 5440
+49	26486 85 34 158 1.000001252 1.000006932 4 46 62 216 11920
+50	26571 85 34 158 1.000001252 1.000006932 4 64 64 256 16384
+51	26656 162 34 158 1.000001252 1.000006932 8 0 1 4 4
+52	26818 85 34 158 1.000001252 1.000006932 4 64 64 256 16384
+53	26903 81 34 158 1.000001252 1.000006932 4 0 0 0 0
+54	26984 64 35 162 1.000001298 1.000007462 3 64 64 192 12288
+55	27048 64 36 185 1.000001298 1.000008134 3 64 64 192 12288
+56	27112 64 39 164 1.000001348 1.000007512 3 64 64 192 12288
+57	27176 64 39 164 1.000001348 1.000007512 3 64 64 192 12288
+58	27240 64 40 189 1.000001348 1.000008184 3 64 64 192 12288
+59	27304 64 40 189 1.000001348 1.000008184 3 64 64 192 12288
+60	27368 64 41 165 1.000001348 1.000007512 3 46 46 138 6348
+61	27432 64 42 191 1.000001348 1.000008184 3 46 46 138 6348
+62	27496 84 47 163 1.000001828 1.000007508 4 64 64 256 16384
+63	27580 85 49 177 1.000001878 1.000007558 4 64 64 256 16384
+64	27665 85 49 177 1.000001878 1.000007558 4 64 64 256 16384
+65	27750 21 92 92 1.000003756 1.000003756 1 28 28 28 784
+66	27771 155 93 274 1.000003756 1.000022828 7 28 576 1348 671408
+67	27926 155 94 275 1.000003756 1.000022828 7 46 594 1474 722204
+68	28081 155 94 275 1.000003756 1.000022828 7 64 594 1508 726152
+69	28236 291 94 275 1.000003756 1.000022828 14 0 1 7 7
+70	28527 154 94 275 1.000003756 1.000022828 7 64 594 1508 726152
+71	28681 152 94 275 1.000003756 1.000022828 7 0 6.72e-07 6.72e-07 4.51584e-13
+72	28833 155 101 277 1.000004332 1.000027644 7 64 594 1508 726152
+73	28988 155 103 278 1.000004382 1.000027694 7 64 594 1508 726152
+74	29143 155 103 278 1.000004382 1.000027694 7 64 594 1508 726152
+75	29298 155 104 279 1.000004382 1.000027694 7 46 576 1382 674132
+76	29453 22 105 105 1.000004382 1.000004382 1 28 28 28 784
+77	29475 66 106 144 1.000004382 1.000006306 3 28 44 116 4656
+78	29541 66 107 145 1.000004382 1.000006306 3 46 62 170 9804
+79	29607 66 107 145 1.000004382 1.000006306 3 64 64 192 12288
+80	29673 126 107 145 1.000004382 1.000006306 6 0 1 3 3
+81	29799 66 107 145 1.000004382 1.000006306 3 64 64 192 12288
+82	29865 63 107 145 1.000004382 1.000006306 3 0 0 0 0
+83	29928 65 113 149 1.000004958 1.000006882 3 64 64 192 12288
+84	29993 65 114 153 1.000005008 1.000006932 3 64 64 192 12288
+85	30058 65 114 153 1.000005008 1.000006932 3 64 64 192 12288
+86	30123 65 115 155 1.000005008 1.000006932 3 46 46 138 6348
+87	30188 52 126 142 1.000005634 1.000006306 2 250000 250000 500000 125000000000
+88	30240 42 126 142 1.000005634 1.000006306 2 0 0 0 0
+89	30282 52 126 126 1.000005634 1.000005634 2 257505 257505 515010 132617650050
+90	30334 47 126 226 1.000005634 1.00000939 2 7504 7504 15008 112620032
+91	30381 21 126 126 1.000005634 1.000005634 1 0 0 0 0
+92	30402 24 126 126 1.000005634 1.000005634 1 7504 7504 7504 56310016
+93	30426 26 126 126 1.000005634 1.000005634 1 250001 250001 250001 62500500001
+94	30452 52 142 142 1.000006306 1.000006306 2 257505 257505 515010 132617650050
+95	30504 48 142 241 1.000006306 1.000010062 2 7504 7504 15008 112620032
+96	30552 21 142 142 1.000006306 1.000006306 1 0 0 0 0
+97	30573 24 142 142 1.000006306 1.000006306 1 7504 7504 7504 56310016
+98	30597 26 142 142 1.000006306 1.000006306 1 250001 250001 250001 62500500001
+99	30623 26 167 167 1.000007512 1.000007512 1 250001 250001 250001 62500500001
+100	30649 27 167 167 1.000007512 1.000007512 1 250001 250001 250001 62500500001
+101	30676 25 167 167 1.000007512 1.000007512 1 7504 7504 7504 56310016
+102	30701 28 171 171 1.000007512 1.000007512 1 1048576 1048576 1048576 1099511627776
+103	30729 54 173 286 1.000007512 4.000007512 2 250001 250001 500002 125001000002
+104	30783 24 173 173 1.000007512 1.000007512 1 536 536 536 287296
+105	30807 27 193 193 1.000008184 1.000008184 1 250001 250001 250001 62500500001
+106	30834 27 193 193 1.000008184 1.000008184 1 250001 250001 250001 62500500001
+107	30861 25 193 193 1.000008184 1.000008184 1 7504 7504 7504 56310016
+108	30886 28 197 197 1.000008184 1.000008184 1 1048576 1048576 1048576 1099511627776
+109	30914 54 199 291 1.000008184 4.000008184 2 250001 250001 500002 125001000002
+110	30968 24 199 199 1.000008184 1.000008184 1 536 536 536 287296
+111	30992 26 226 226 1.00000939 1.00000939 1 250001 250001 250001 62500500001
+112	31018 26 226 226 1.00000939 1.00000939 1 250002 250002 250002 62501000004
+113	31044 21 226 226 1.00000939 1.00000939 1 0 0 0 0
+114	31065 27 241 241 1.000010062 1.000010062 1 250001 250001 250001 62500500001
+115	31092 27 241 241 1.000010062 1.000010062 1 250002 250002 250002 62501000004
+116	31119 22 241 241 1.000010062 1.000010062 1 0 0 0 0
+117	31141 58 269 280 1.000022782 1.000027694 2 77330337 77330338 154660675 1.1959962195728e+16
+118	31199 48 269 280 1.000022782 1.000027694 2 576 576 1152 663552
+119	31247 22 286 286 4.000007512 4.000007512 1 1 1 1 1
+120	31269 25 286 286 4.000007512 4.000007512 1 1072 1072 1072 1149184
+121	31294 24 286 286 4.000007512 4.000007512 1 536 536 536 287296
+122	31318 22 291 291 4.000008184 4.000008184 1 1 1 1 1
+123	31340 25 291 291 4.000008184 4.000008184 1 1072 1072 1072 1149184
+124	31365 24 291 291 4.000008184 4.000008184 1 536 536 536 287296
+
