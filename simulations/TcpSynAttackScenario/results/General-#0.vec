@@ -1,0 +1,2593 @@
+version 2
+run General-0-20220418-11:27:55-79432
+attr configname General
+attr datetime 20220418-11:27:55
+attr experiment General
+attr inifile TcpSynAttack.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network TcpSynAttack
+attr processid 79432
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param *.numSubnet*Attackers 2
+param *.总线[0].positions "\"40\""
+param *.总线[1].positions "\"33\""
+param *.被控主机[*].numApps 1
+param *.被控主机[*].app[0].typename "\"DSAK_TcpSynAttackApp\""
+param *.被控主机[*].app[0].connectAddress "\"服务器\""
+param *.被控主机[*].app[0].connectPort 1000
+param *.服务器.numApps 1
+param *.服务器.app[0].typename "\"TcpGenericServerApp\""
+param *.服务器.app[0].localPort 1000
+param *.被控主机[2..].eth[0].csmacdSupport true
+param *.服务器.eth[0].csmacdSupport true
+param *.路由器[1..2].eth[0].csmacdSupport true
+
+vector 0 TcpSynAttack.路由器[0].ppp[0].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "tx state, vector"
+vector 1 TcpSynAttack.路由器[0].ppp[1].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "tx state, vector"
+vector 2 TcpSynAttack.路由器[1].ppp[0].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "tx state, vector"
+vector 3 TcpSynAttack.路由器[1].ppp[1].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "tx state, vector"
+vector 4 TcpSynAttack.路由器[2].ppp[0].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "tx state, vector"
+vector 5 TcpSynAttack.路由器[2].ppp[1].ppp transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "tx state, vector"
+vector 6 TcpSynAttack.被控主机[0].tcp.conn-13 tcpRcvQueueBytes:vector ETV
+attr interpolationmode sample-hold
+vector 7 TcpSynAttack.被控主机[0].tcp.conn-13 rcvAdv:vector ETV
+attr interpolationmode sample-hold
+vector 8 TcpSynAttack.被控主机[0].tcp.conn-13 rcvWnd:vector ETV
+attr interpolationmode sample-hold
+vector 9 TcpSynAttack.被控主机[0].tcp.conn-13 sndAck:vector ETV
+attr interpolationmode sample-hold
+vector 10 TcpSynAttack.被控主机[1].tcp.conn-14 tcpRcvQueueBytes:vector ETV
+attr interpolationmode sample-hold
+vector 11 TcpSynAttack.被控主机[1].tcp.conn-14 rcvAdv:vector ETV
+attr interpolationmode sample-hold
+vector 12 TcpSynAttack.被控主机[1].tcp.conn-14 rcvWnd:vector ETV
+attr interpolationmode sample-hold
+vector 13 TcpSynAttack.被控主机[1].tcp.conn-14 sndAck:vector ETV
+attr interpolationmode sample-hold
+vector 14 TcpSynAttack.被控主机[2].tcp.conn-15 tcpRcvQueueBytes:vector ETV
+attr interpolationmode sample-hold
+vector 15 TcpSynAttack.被控主机[2].tcp.conn-15 rcvAdv:vector ETV
+attr interpolationmode sample-hold
+vector 16 TcpSynAttack.被控主机[2].tcp.conn-15 rcvWnd:vector ETV
+attr interpolationmode sample-hold
+vector 17 TcpSynAttack.被控主机[2].tcp.conn-15 sndAck:vector ETV
+attr interpolationmode sample-hold
+vector 18 TcpSynAttack.被控主机[3].tcp.conn-16 tcpRcvQueueBytes:vector ETV
+attr interpolationmode sample-hold
+vector 19 TcpSynAttack.被控主机[3].tcp.conn-16 rcvAdv:vector ETV
+attr interpolationmode sample-hold
+vector 20 TcpSynAttack.被控主机[3].tcp.conn-16 rcvWnd:vector ETV
+attr interpolationmode sample-hold
+vector 21 TcpSynAttack.被控主机[3].tcp.conn-16 sndAck:vector ETV
+attr interpolationmode sample-hold
+vector 22 TcpSynAttack.被控主机[4].tcp.conn-17 tcpRcvQueueBytes:vector ETV
+attr interpolationmode sample-hold
+vector 23 TcpSynAttack.被控主机[4].tcp.conn-17 rcvAdv:vector ETV
+attr interpolationmode sample-hold
+vector 24 TcpSynAttack.被控主机[4].tcp.conn-17 rcvWnd:vector ETV
+attr interpolationmode sample-hold
+vector 25 TcpSynAttack.被控主机[4].tcp.conn-17 sndAck:vector ETV
+attr interpolationmode sample-hold
+vector 26 TcpSynAttack.被控主机[5].tcp.conn-18 tcpRcvQueueBytes:vector ETV
+attr interpolationmode sample-hold
+vector 27 TcpSynAttack.被控主机[5].tcp.conn-18 rcvAdv:vector ETV
+attr interpolationmode sample-hold
+vector 28 TcpSynAttack.被控主机[5].tcp.conn-18 rcvWnd:vector ETV
+attr interpolationmode sample-hold
+vector 29 TcpSynAttack.被控主机[5].tcp.conn-18 sndAck:vector ETV
+attr interpolationmode sample-hold
+vector 30 TcpSynAttack.被控主机[0].ipv4.arp arpRequestSent:vector(packetBytes) ETV
+attr source arpRequestSent
+attr title "ARP request sent, vector(packetBytes)"
+vector 31 TcpSynAttack.被控主机[1].ipv4.arp arpRequestSent:vector(packetBytes) ETV
+attr source arpRequestSent
+attr title "ARP request sent, vector(packetBytes)"
+vector 32 TcpSynAttack.被控主机[2].ipv4.arp arpRequestSent:vector(packetBytes) ETV
+attr source arpRequestSent
+attr title "ARP request sent, vector(packetBytes)"
+vector 33 TcpSynAttack.被控主机[3].ipv4.arp arpRequestSent:vector(packetBytes) ETV
+attr source arpRequestSent
+attr title "ARP request sent, vector(packetBytes)"
+vector 34 TcpSynAttack.被控主机[4].ipv4.arp arpRequestSent:vector(packetBytes) ETV
+attr source arpRequestSent
+attr title "ARP request sent, vector(packetBytes)"
+vector 35 TcpSynAttack.被控主机[5].ipv4.arp arpRequestSent:vector(packetBytes) ETV
+attr source arpRequestSent
+attr title "ARP request sent, vector(packetBytes)"
+vector 36 TcpSynAttack.被控主机[0].eth[0].encap encapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, vector(packetBytes)"
+vector 37 TcpSynAttack.被控主机[1].eth[0].encap encapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, vector(packetBytes)"
+vector 38 TcpSynAttack.被控主机[2].eth[0].encap encapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, vector(packetBytes)"
+vector 39 TcpSynAttack.被控主机[3].eth[0].encap encapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, vector(packetBytes)"
+vector 40 TcpSynAttack.被控主机[4].eth[0].encap encapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, vector(packetBytes)"
+vector 41 TcpSynAttack.被控主机[5].eth[0].encap encapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, vector(packetBytes)"
+vector 42 TcpSynAttack.被控主机[0].eth[0].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 43 TcpSynAttack.被控主机[0].eth[0].mac.queue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 44 TcpSynAttack.被控主机[0].eth[0].mac.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 45 TcpSynAttack.被控主机[0].eth[0].mac.queue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 46 TcpSynAttack.被控主机[0].eth[0].mac.queue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 47 TcpSynAttack.被控主机[1].eth[0].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 48 TcpSynAttack.被控主机[1].eth[0].mac.queue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 49 TcpSynAttack.被控主机[1].eth[0].mac.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 50 TcpSynAttack.被控主机[1].eth[0].mac.queue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 51 TcpSynAttack.被控主机[1].eth[0].mac.queue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 52 TcpSynAttack.被控主机[2].eth[0].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 53 TcpSynAttack.被控主机[2].eth[0].mac.queue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 54 TcpSynAttack.被控主机[2].eth[0].mac.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 55 TcpSynAttack.被控主机[2].eth[0].mac.queue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 56 TcpSynAttack.被控主机[2].eth[0].mac.queue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 57 TcpSynAttack.被控主机[3].eth[0].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 58 TcpSynAttack.被控主机[3].eth[0].mac.queue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 59 TcpSynAttack.被控主机[3].eth[0].mac.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 60 TcpSynAttack.被控主机[3].eth[0].mac.queue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 61 TcpSynAttack.被控主机[3].eth[0].mac.queue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 62 TcpSynAttack.被控主机[4].eth[0].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 63 TcpSynAttack.被控主机[4].eth[0].mac.queue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 64 TcpSynAttack.被控主机[4].eth[0].mac.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 65 TcpSynAttack.被控主机[4].eth[0].mac.queue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 66 TcpSynAttack.被控主机[4].eth[0].mac.queue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 67 TcpSynAttack.被控主机[5].eth[0].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 68 TcpSynAttack.被控主机[5].eth[0].mac.queue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 69 TcpSynAttack.被控主机[5].eth[0].mac.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 70 TcpSynAttack.被控主机[5].eth[0].mac.queue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 71 TcpSynAttack.被控主机[5].eth[0].mac.queue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 72 TcpSynAttack.被控主机[0].eth[0].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 73 TcpSynAttack.被控主机[1].eth[0].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 74 TcpSynAttack.被控主机[2].eth[0].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 75 TcpSynAttack.被控主机[3].eth[0].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 76 TcpSynAttack.被控主机[4].eth[0].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 77 TcpSynAttack.被控主机[5].eth[0].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 78 TcpSynAttack.交换机[0].eth[1].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 79 TcpSynAttack.交换机[0].eth[1].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 80 TcpSynAttack.交换机[0].eth[2].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 81 TcpSynAttack.交换机[0].eth[2].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 82 TcpSynAttack.交换机[1].eth[2].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 83 TcpSynAttack.交换机[1].eth[2].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 84 TcpSynAttack.交换机[1].eth[3].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 85 TcpSynAttack.交换机[1].eth[3].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 86 TcpSynAttack.交换机[2].eth[1].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 87 TcpSynAttack.交换机[2].eth[1].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 88 TcpSynAttack.交换机[2].eth[2].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 89 TcpSynAttack.交换机[2].eth[2].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 90 TcpSynAttack.交换机[0].eth[0].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 91 TcpSynAttack.交换机[0].eth[0].mac.queue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 92 TcpSynAttack.交换机[0].eth[0].mac.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 93 TcpSynAttack.交换机[0].eth[0].mac.queue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 94 TcpSynAttack.交换机[0].eth[0].mac.queue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 95 TcpSynAttack.交换机[0].eth[2].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 96 TcpSynAttack.交换机[0].eth[2].mac.queue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 97 TcpSynAttack.交换机[0].eth[2].mac.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 98 TcpSynAttack.交换机[0].eth[2].mac.queue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 99 TcpSynAttack.交换机[0].eth[2].mac.queue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 100 TcpSynAttack.交换机[0].eth[1].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 101 TcpSynAttack.交换机[0].eth[1].mac.queue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 102 TcpSynAttack.交换机[0].eth[1].mac.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 103 TcpSynAttack.交换机[0].eth[1].mac.queue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 104 TcpSynAttack.交换机[0].eth[1].mac.queue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 105 TcpSynAttack.交换机[1].eth[0].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 106 TcpSynAttack.交换机[1].eth[0].mac.queue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 107 TcpSynAttack.交换机[1].eth[0].mac.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 108 TcpSynAttack.交换机[1].eth[0].mac.queue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 109 TcpSynAttack.交换机[1].eth[0].mac.queue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 110 TcpSynAttack.交换机[1].eth[1].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 111 TcpSynAttack.交换机[1].eth[1].mac.queue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 112 TcpSynAttack.交换机[1].eth[1].mac.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 113 TcpSynAttack.交换机[1].eth[1].mac.queue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 114 TcpSynAttack.交换机[1].eth[1].mac.queue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 115 TcpSynAttack.交换机[1].eth[3].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 116 TcpSynAttack.交换机[1].eth[3].mac.queue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 117 TcpSynAttack.交换机[1].eth[3].mac.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 118 TcpSynAttack.交换机[1].eth[3].mac.queue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 119 TcpSynAttack.交换机[1].eth[3].mac.queue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 120 TcpSynAttack.交换机[1].eth[2].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 121 TcpSynAttack.交换机[1].eth[2].mac.queue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 122 TcpSynAttack.交换机[1].eth[2].mac.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 123 TcpSynAttack.交换机[1].eth[2].mac.queue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 124 TcpSynAttack.交换机[1].eth[2].mac.queue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 125 TcpSynAttack.交换机[2].eth[0].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 126 TcpSynAttack.交换机[2].eth[0].mac.queue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 127 TcpSynAttack.交换机[2].eth[0].mac.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 128 TcpSynAttack.交换机[2].eth[0].mac.queue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 129 TcpSynAttack.交换机[2].eth[0].mac.queue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 130 TcpSynAttack.交换机[2].eth[2].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 131 TcpSynAttack.交换机[2].eth[2].mac.queue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 132 TcpSynAttack.交换机[2].eth[2].mac.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 133 TcpSynAttack.交换机[2].eth[2].mac.queue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 134 TcpSynAttack.交换机[2].eth[2].mac.queue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 135 TcpSynAttack.交换机[2].eth[1].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 136 TcpSynAttack.交换机[2].eth[1].mac.queue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 137 TcpSynAttack.交换机[2].eth[1].mac.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 138 TcpSynAttack.交换机[2].eth[1].mac.queue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 139 TcpSynAttack.交换机[2].eth[1].mac.queue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 140 TcpSynAttack.交换机[0].eth[0].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 141 TcpSynAttack.交换机[1].eth[0].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 142 TcpSynAttack.交换机[1].eth[1].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 143 TcpSynAttack.交换机[2].eth[0].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 144 TcpSynAttack.路由器[0].eth[0].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 145 TcpSynAttack.路由器[0].eth[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 146 TcpSynAttack.路由器[1].eth[0].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 147 TcpSynAttack.路由器[1].eth[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 148 TcpSynAttack.服务器.eth[0].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 149 TcpSynAttack.服务器.eth[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 150 TcpSynAttack.路由器[2].eth[0].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 151 TcpSynAttack.路由器[2].eth[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 152 TcpSynAttack.路由器[0].eth[0].encap decapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, vector(packetBytes)"
+vector 153 TcpSynAttack.路由器[1].eth[0].encap decapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, vector(packetBytes)"
+vector 154 TcpSynAttack.服务器.eth[0].encap decapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, vector(packetBytes)"
+vector 155 TcpSynAttack.路由器[2].eth[0].encap decapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, vector(packetBytes)"
+vector 156 TcpSynAttack.路由器[0].ipv4.arp arpReplySent:vector(packetBytes) ETV
+attr source arpReplySent
+attr title "ARP replies sent, vector(packetBytes)"
+vector 157 TcpSynAttack.服务器.ipv4.arp arpReplySent:vector(packetBytes) ETV
+attr source arpReplySent
+attr title "ARP replies sent, vector(packetBytes)"
+vector 158 TcpSynAttack.路由器[2].ipv4.arp arpReplySent:vector(packetBytes) ETV
+attr source arpReplySent
+attr title "ARP replies sent, vector(packetBytes)"
+vector 159 TcpSynAttack.路由器[0].eth[0].encap encapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, vector(packetBytes)"
+vector 160 TcpSynAttack.服务器.eth[0].encap encapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, vector(packetBytes)"
+vector 161 TcpSynAttack.路由器[2].eth[0].encap encapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, vector(packetBytes)"
+vector 162 TcpSynAttack.路由器[0].eth[0].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 163 TcpSynAttack.路由器[0].eth[0].mac.queue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 164 TcpSynAttack.路由器[0].eth[0].mac.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 165 TcpSynAttack.路由器[0].eth[0].mac.queue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 166 TcpSynAttack.路由器[0].eth[0].mac.queue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 167 TcpSynAttack.服务器.eth[0].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 168 TcpSynAttack.服务器.eth[0].mac.queue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 169 TcpSynAttack.服务器.eth[0].mac.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 170 TcpSynAttack.服务器.eth[0].mac.queue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 171 TcpSynAttack.服务器.eth[0].mac.queue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 172 TcpSynAttack.路由器[2].eth[0].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 173 TcpSynAttack.路由器[2].eth[0].mac.queue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 174 TcpSynAttack.路由器[2].eth[0].mac.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 175 TcpSynAttack.路由器[2].eth[0].mac.queue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 176 TcpSynAttack.路由器[2].eth[0].mac.queue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 177 TcpSynAttack.交换机[0].eth[1].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 178 TcpSynAttack.交换机[0].eth[2].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 179 TcpSynAttack.交换机[1].eth[2].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 180 TcpSynAttack.交换机[1].eth[3].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 181 TcpSynAttack.交换机[2].eth[1].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 182 TcpSynAttack.交换机[2].eth[2].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 183 TcpSynAttack.被控主机[0].eth[0].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 184 TcpSynAttack.被控主机[0].eth[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 185 TcpSynAttack.被控主机[1].eth[0].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 186 TcpSynAttack.被控主机[1].eth[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 187 TcpSynAttack.被控主机[2].eth[0].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 188 TcpSynAttack.被控主机[2].eth[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 189 TcpSynAttack.被控主机[3].eth[0].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 190 TcpSynAttack.被控主机[3].eth[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 191 TcpSynAttack.被控主机[4].eth[0].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 192 TcpSynAttack.被控主机[4].eth[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 193 TcpSynAttack.被控主机[5].eth[0].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 194 TcpSynAttack.被控主机[5].eth[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 195 TcpSynAttack.被控主机[0].eth[0].encap decapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, vector(packetBytes)"
+vector 196 TcpSynAttack.被控主机[1].eth[0].encap decapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, vector(packetBytes)"
+vector 197 TcpSynAttack.被控主机[2].eth[0].encap decapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, vector(packetBytes)"
+vector 198 TcpSynAttack.被控主机[3].eth[0].encap decapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, vector(packetBytes)"
+vector 199 TcpSynAttack.被控主机[4].eth[0].encap decapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, vector(packetBytes)"
+vector 200 TcpSynAttack.被控主机[5].eth[0].encap decapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, vector(packetBytes)"
+vector 201 TcpSynAttack.路由器[0].eth[0].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 202 TcpSynAttack.交换机[0].eth[0].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 203 TcpSynAttack.交换机[0].eth[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 204 TcpSynAttack.服务器.eth[0].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 205 TcpSynAttack.路由器[2].eth[0].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 206 TcpSynAttack.交换机[1].eth[1].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 207 TcpSynAttack.交换机[1].eth[1].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 208 TcpSynAttack.交换机[2].eth[0].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 209 TcpSynAttack.交换机[2].eth[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 210 TcpSynAttack.路由器[0].ppp[0].ppp rcvdPkFromHl:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, vector(packetBytes)"
+vector 211 TcpSynAttack.路由器[0].ppp[0].ppp.queue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 212 TcpSynAttack.路由器[0].ppp[0].ppp.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 213 TcpSynAttack.路由器[0].ppp[0].ppp.queue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 214 TcpSynAttack.路由器[0].ppp[0].ppp.queue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 215 TcpSynAttack.路由器[0].ppp[0].ppp txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 216 TcpSynAttack.服务器.tcp.conn-6 rcvSeq:vector ETV
+attr interpolationmode sample-hold
+vector 217 TcpSynAttack.服务器.tcp.conn-6 rcvAck:vector ETV
+attr interpolationmode sample-hold
+vector 218 TcpSynAttack.服务器.tcp.conn-19 rcvAdv:vector ETV
+attr interpolationmode sample-hold
+vector 219 TcpSynAttack.服务器.tcp.conn-19 sndWnd:vector ETV
+attr interpolationmode sample-hold
+vector 220 TcpSynAttack.服务器.tcp.conn-19 tcpRcvQueueBytes:vector ETV
+attr interpolationmode sample-hold
+vector 221 TcpSynAttack.服务器.tcp.conn-19 rcvWnd:vector ETV
+attr interpolationmode sample-hold
+vector 222 TcpSynAttack.服务器.tcp.conn-19 sndAck:vector ETV
+attr interpolationmode sample-hold
+vector 223 TcpSynAttack.路由器[2].ppp[0].ppp rcvdPkFromHl:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, vector(packetBytes)"
+vector 224 TcpSynAttack.路由器[2].ppp[0].ppp.queue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 225 TcpSynAttack.路由器[2].ppp[0].ppp.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 226 TcpSynAttack.路由器[2].ppp[0].ppp.queue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 227 TcpSynAttack.路由器[2].ppp[0].ppp.queue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 228 TcpSynAttack.路由器[2].ppp[0].ppp txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 229 TcpSynAttack.路由器[1].ppp[0].ppp rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 230 TcpSynAttack.路由器[1].ppp[0].ppp passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 231 TcpSynAttack.路由器[1].ipv4.arp arpRequestSent:vector(packetBytes) ETV
+attr source arpRequestSent
+attr title "ARP request sent, vector(packetBytes)"
+vector 232 TcpSynAttack.路由器[1].eth[0].encap encapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, vector(packetBytes)"
+vector 233 TcpSynAttack.路由器[1].eth[0].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 234 TcpSynAttack.路由器[1].eth[0].mac.queue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 235 TcpSynAttack.路由器[1].eth[0].mac.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 236 TcpSynAttack.路由器[1].eth[0].mac.queue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 237 TcpSynAttack.路由器[1].eth[0].mac.queue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 238 TcpSynAttack.服务器.tcp.conn-20 rcvAdv:vector ETV
+attr interpolationmode sample-hold
+vector 239 TcpSynAttack.服务器.tcp.conn-20 sndWnd:vector ETV
+attr interpolationmode sample-hold
+vector 240 TcpSynAttack.服务器.tcp.conn-20 tcpRcvQueueBytes:vector ETV
+attr interpolationmode sample-hold
+vector 241 TcpSynAttack.服务器.tcp.conn-20 rcvWnd:vector ETV
+attr interpolationmode sample-hold
+vector 242 TcpSynAttack.服务器.tcp.conn-20 sndAck:vector ETV
+attr interpolationmode sample-hold
+vector 243 TcpSynAttack.路由器[1].ppp[1].ppp rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 244 TcpSynAttack.路由器[1].ppp[1].ppp passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 245 TcpSynAttack.路由器[1].eth[0].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 246 TcpSynAttack.交换机[1].eth[0].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 247 TcpSynAttack.交换机[1].eth[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 248 TcpSynAttack.被控主机[2].tcp.conn-15 rcvSeq:vector ETV
+attr interpolationmode sample-hold
+vector 249 TcpSynAttack.被控主机[2].tcp.conn-15 rcvAck:vector ETV
+attr interpolationmode sample-hold
+vector 250 TcpSynAttack.被控主机[2].tcp.conn-15 sndWnd:vector ETV
+attr interpolationmode sample-hold
+vector 251 TcpSynAttack.被控主机[3].tcp.conn-16 rcvSeq:vector ETV
+attr interpolationmode sample-hold
+vector 252 TcpSynAttack.被控主机[3].tcp.conn-16 rcvAck:vector ETV
+attr interpolationmode sample-hold
+vector 253 TcpSynAttack.被控主机[3].tcp.conn-16 sndWnd:vector ETV
+attr interpolationmode sample-hold
+vector 254 TcpSynAttack.服务器.tcp.conn-21 rcvAdv:vector ETV
+attr interpolationmode sample-hold
+vector 255 TcpSynAttack.服务器.tcp.conn-21 sndWnd:vector ETV
+attr interpolationmode sample-hold
+vector 256 TcpSynAttack.服务器.tcp.conn-21 tcpRcvQueueBytes:vector ETV
+attr interpolationmode sample-hold
+vector 257 TcpSynAttack.服务器.tcp.conn-21 rcvWnd:vector ETV
+attr interpolationmode sample-hold
+vector 258 TcpSynAttack.服务器.tcp.conn-21 sndAck:vector ETV
+attr interpolationmode sample-hold
+vector 259 TcpSynAttack.服务器.tcp.conn-22 rcvAdv:vector ETV
+attr interpolationmode sample-hold
+vector 260 TcpSynAttack.服务器.tcp.conn-22 sndWnd:vector ETV
+attr interpolationmode sample-hold
+vector 261 TcpSynAttack.服务器.tcp.conn-22 tcpRcvQueueBytes:vector ETV
+attr interpolationmode sample-hold
+vector 262 TcpSynAttack.服务器.tcp.conn-22 rcvWnd:vector ETV
+attr interpolationmode sample-hold
+vector 263 TcpSynAttack.服务器.tcp.conn-22 sndAck:vector ETV
+attr interpolationmode sample-hold
+vector 264 TcpSynAttack.路由器[1].ppp[0].ppp rcvdPkFromHl:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, vector(packetBytes)"
+vector 265 TcpSynAttack.路由器[1].ppp[0].ppp.queue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 266 TcpSynAttack.路由器[1].ppp[0].ppp.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 267 TcpSynAttack.路由器[1].ppp[0].ppp.queue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 268 TcpSynAttack.路由器[1].ppp[0].ppp.queue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 269 TcpSynAttack.路由器[1].ppp[0].ppp txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 270 TcpSynAttack.服务器.tcp.conn-23 rcvAdv:vector ETV
+attr interpolationmode sample-hold
+vector 271 TcpSynAttack.服务器.tcp.conn-23 sndWnd:vector ETV
+attr interpolationmode sample-hold
+vector 272 TcpSynAttack.服务器.tcp.conn-23 tcpRcvQueueBytes:vector ETV
+attr interpolationmode sample-hold
+vector 273 TcpSynAttack.服务器.tcp.conn-23 rcvWnd:vector ETV
+attr interpolationmode sample-hold
+vector 274 TcpSynAttack.服务器.tcp.conn-23 sndAck:vector ETV
+attr interpolationmode sample-hold
+vector 275 TcpSynAttack.路由器[1].ppp[1].ppp rcvdPkFromHl:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, vector(packetBytes)"
+vector 276 TcpSynAttack.路由器[1].ppp[1].ppp.queue packetPushed:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet pushed, vector(packetBytes)"
+vector 277 TcpSynAttack.路由器[1].ppp[1].ppp.queue queueLength:vector ETV
+attr interpolationmode sample-hold
+attr source "count(packetPushed) - count(packetPopped) - count(packetRemoved) - count(packetDropped)"
+attr title "queue length, vector"
+vector 278 TcpSynAttack.路由器[1].ppp[1].ppp.queue packetPopped:vector(packetBytes) ETV
+attr interpolationmode none
+attr title "packet popped, vector(packetBytes)"
+vector 279 TcpSynAttack.路由器[1].ppp[1].ppp.queue queueingTime:vector ETV
+attr interpolationmode none
+attr source queueingTime(packetPopped)
+attr title "queueing times, vector"
+attr unit s
+vector 280 TcpSynAttack.路由器[1].ppp[1].ppp txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 281 TcpSynAttack.服务器.tcp.conn-24 rcvAdv:vector ETV
+attr interpolationmode sample-hold
+vector 282 TcpSynAttack.服务器.tcp.conn-24 sndWnd:vector ETV
+attr interpolationmode sample-hold
+vector 283 TcpSynAttack.服务器.tcp.conn-24 tcpRcvQueueBytes:vector ETV
+attr interpolationmode sample-hold
+vector 284 TcpSynAttack.服务器.tcp.conn-24 rcvWnd:vector ETV
+attr interpolationmode sample-hold
+vector 285 TcpSynAttack.服务器.tcp.conn-24 sndAck:vector ETV
+attr interpolationmode sample-hold
+vector 286 TcpSynAttack.路由器[0].ppp[0].ppp rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 287 TcpSynAttack.路由器[0].ppp[0].ppp passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 288 TcpSynAttack.路由器[2].ppp[0].ppp rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 289 TcpSynAttack.路由器[2].ppp[0].ppp passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 290 TcpSynAttack.被控主机[0].tcp.conn-13 rcvSeq:vector ETV
+attr interpolationmode sample-hold
+vector 291 TcpSynAttack.被控主机[0].tcp.conn-13 rcvAck:vector ETV
+attr interpolationmode sample-hold
+vector 292 TcpSynAttack.被控主机[0].tcp.conn-13 sndWnd:vector ETV
+attr interpolationmode sample-hold
+vector 293 TcpSynAttack.被控主机[4].tcp.conn-17 rcvSeq:vector ETV
+attr interpolationmode sample-hold
+vector 294 TcpSynAttack.被控主机[4].tcp.conn-17 rcvAck:vector ETV
+attr interpolationmode sample-hold
+vector 295 TcpSynAttack.被控主机[4].tcp.conn-17 sndWnd:vector ETV
+attr interpolationmode sample-hold
+vector 296 TcpSynAttack.被控主机[1].tcp.conn-14 rcvSeq:vector ETV
+attr interpolationmode sample-hold
+vector 297 TcpSynAttack.被控主机[1].tcp.conn-14 rcvAck:vector ETV
+attr interpolationmode sample-hold
+vector 298 TcpSynAttack.被控主机[1].tcp.conn-14 sndWnd:vector ETV
+attr interpolationmode sample-hold
+vector 299 TcpSynAttack.被控主机[5].tcp.conn-18 rcvSeq:vector ETV
+attr interpolationmode sample-hold
+vector 300 TcpSynAttack.被控主机[5].tcp.conn-18 rcvAck:vector ETV
+attr interpolationmode sample-hold
+vector 301 TcpSynAttack.被控主机[5].tcp.conn-18 sndWnd:vector ETV
+attr interpolationmode sample-hold
+0	0	0	0
+0	301	1.0034566	1
+0	347	1.0042726	0
+0	347	1.0042726	1
+0	401	1.0050886	0
+1	0	0	0
+2	0	0	0
+2	513	1.0091695	1
+2	557	1.0099855	0
+2	570	1.0105135	1
+2	610	1.0113295	0
+3	0	0	0
+3	541	1.0098415	1
+3	582	1.0106575	0
+3	601	1.0111855	1
+3	629	1.0120015	0
+4	0	0	0
+4	318	1.0036486	1
+4	376	1.0044646	0
+4	376	1.0044646	1
+4	405	1.0052806	0
+5	0	0	0
+6	8	1	0
+7	8	1	7504
+7	596	1.0111378	259485
+8	8	1	7504
+9	8	1	0
+10	9	1	0
+11	9	1	7504
+11	641	1.0124818	259821
+12	9	1	7504
+13	9	1	0
+14	10	1	0
+15	10	1	7504
+15	391	1.0048968	258417
+16	10	1	7504
+17	10	1	0
+18	11	1	0
+19	11	1	7504
+19	435	1.0060969	258585
+20	11	1	7504
+21	11	1	0
+22	12	1	0
+23	12	1	7504
+23	622	1.0118098	259653
+24	12	1	7504
+25	12	1	0
+26	13	1	0
+27	13	1	7504
+27	654	1.0131538	259989
+28	13	1	7504
+29	13	1	0
+30	14	1	28
+31	15	1	28
+32	16	1	28
+33	17	1	28
+34	18	1	28
+35	19	1	28
+36	20	1	28
+36	209	1.0023044	44
+37	21	1	28
+37	260	1.0029764	44
+38	22	1	28
+38	225	1.0024004	44
+39	23	1	28
+39	275	1.0030724	44
+40	24	1	28
+40	226	1.0024004	44
+41	25	1	28
+41	276	1.0030724	44
+42	26	1	46
+42	210	1.0023044	62
+43	26	1	64
+43	210	1.0023044	64
+44	26	1	1
+44	26	1	0
+44	210	1.0023044	1
+44	210	1.0023044	0
+45	26	1	64
+45	210	1.0023044	64
+46	26	1	0
+46	210	1.0023044	0
+47	27	1	46
+47	261	1.0029764	62
+48	27	1	64
+48	261	1.0029764	64
+49	27	1	1
+49	27	1	0
+49	261	1.0029764	1
+49	261	1.0029764	0
+50	27	1	64
+50	261	1.0029764	64
+51	27	1	0
+51	261	1.0029764	0
+52	28	1	46
+52	227	1.0024004	62
+53	28	1	64
+53	227	1.0024004	64
+54	28	1	1
+54	28	1	0
+54	227	1.0024004	1
+54	227	1.0024004	0
+55	28	1	64
+55	227	1.0024004	64
+56	28	1	0
+56	227	1.0024004	0
+57	29	1	46
+57	277	1.0030724	62
+58	29	1	64
+58	277	1.0030724	64
+59	29	1	1
+59	29	1	0
+59	277	1.0030724	1
+59	277	1.0030724	0
+60	29	1	64
+60	277	1.0030724	64
+61	29	1	0
+61	277	1.0030724	0
+62	30	1	46
+62	228	1.0024004	62
+63	30	1	64
+63	228	1.0024004	64
+64	30	1	1
+64	30	1	0
+64	228	1.0024004	1
+64	228	1.0024004	0
+65	30	1	64
+65	228	1.0024004	64
+66	30	1	0
+66	228	1.0024004	0
+67	31	1	46
+67	278	1.0030724	62
+68	31	1	64
+68	278	1.0030724	64
+69	31	1	1
+69	31	1	0
+69	278	1.0030724	1
+69	278	1.0030724	0
+70	31	1	64
+70	278	1.0030724	64
+71	31	1	0
+71	278	1.0030724	0
+72	38	1.000576	64
+72	251	1.0028804	64
+73	39	1.000576	64
+73	302	1.0035524	64
+74	40	1.000576	64
+74	267	1.0030724	64
+75	41	1.000576	64
+75	322	1.0037444	64
+76	42	1.000576	64
+76	268	1.0030724	64
+77	43	1.000576	64
+77	323	1.0037444	64
+78	44	1.0005761	64
+78	252	1.0028805	64
+79	44	1.0005761	64
+79	252	1.0028805	64
+80	45	1.0005761	64
+80	303	1.0035525	64
+81	45	1.0005761	64
+81	303	1.0035525	64
+82	46	1.0005761	64
+82	279	1.0030725	64
+83	46	1.0005761	64
+83	279	1.0030725	64
+84	47	1.0005761	64
+84	324	1.0037445	64
+85	47	1.0005761	64
+85	324	1.0037445	64
+86	48	1.0005761	64
+86	280	1.0030725	64
+87	48	1.0005761	64
+87	280	1.0030725	64
+88	49	1.0005761	64
+88	325	1.0037445	64
+89	49	1.0005761	64
+89	325	1.0037445	64
+90	56	1.0005761	64
+90	58	1.0005761	64
+90	254	1.0028805	64
+90	306	1.0035525	64
+91	56	1.0005761	64
+91	58	1.0005761	64
+91	254	1.0028805	64
+91	306	1.0035525	64
+92	56	1.0005761	1
+92	56	1.0005761	0
+92	58	1.0005761	1
+92	89	1.0011521	0
+92	254	1.0028805	1
+92	254	1.0028805	0
+92	306	1.0035525	1
+92	306	1.0035525	0
+93	56	1.0005761	64
+93	89	1.0011521	64
+93	254	1.0028805	64
+93	306	1.0035525	64
+94	56	1.0005761	0
+94	89	1.0011521	0.000576
+94	254	1.0028805	0
+94	306	1.0035525	0
+95	57	1.0005761	64
+95	218	1.0024003	64
+95	627	1.0119057	64
+96	57	1.0005761	64
+96	218	1.0024003	64
+96	627	1.0119057	64
+97	57	1.0005761	1
+97	57	1.0005761	0
+97	218	1.0024003	1
+97	218	1.0024003	0
+97	627	1.0119057	1
+97	627	1.0119057	0
+98	57	1.0005761	64
+98	218	1.0024003	64
+98	627	1.0119057	64
+99	57	1.0005761	0
+99	218	1.0024003	0
+99	627	1.0119057	0
+100	59	1.0005761	64
+100	161	1.0017283	64
+100	574	1.0105617	64
+101	59	1.0005761	64
+101	161	1.0017283	64
+101	574	1.0105617	64
+102	59	1.0005761	1
+102	59	1.0005761	0
+102	161	1.0017283	1
+102	161	1.0017283	0
+102	574	1.0105617	1
+102	574	1.0105617	0
+103	59	1.0005761	64
+103	161	1.0017283	64
+103	574	1.0105617	64
+104	59	1.0005761	0
+104	161	1.0017283	0
+104	574	1.0105617	0
+105	60	1.0005761	64
+105	63	1.0005761	64
+105	438	1.006097	64
+105	497	1.0085934	64
+105	526	1.0092654	64
+105	554	1.0099374	64
+105	579	1.0106094	64
+106	60	1.0005761	64
+106	63	1.0005761	64
+106	438	1.006097	64
+106	497	1.0085934	64
+106	526	1.0092654	64
+106	554	1.0099374	64
+106	579	1.0106094	64
+107	60	1.0005761	1
+107	60	1.0005761	0
+107	63	1.0005761	1
+107	90	1.0011521	0
+107	438	1.006097	1
+107	438	1.006097	0
+107	497	1.0085934	1
+107	497	1.0085934	0
+107	526	1.0092654	1
+107	526	1.0092654	0
+107	554	1.0099374	1
+107	554	1.0099374	0
+107	579	1.0106094	1
+107	579	1.0106094	0
+108	60	1.0005761	64
+108	90	1.0011521	64
+108	438	1.006097	64
+108	497	1.0085934	64
+108	526	1.0092654	64
+108	554	1.0099374	64
+108	579	1.0106094	64
+109	60	1.0005761	0
+109	90	1.0011521	0.000576
+109	438	1.006097	0
+109	497	1.0085934	0
+109	526	1.0092654	0
+109	554	1.0099374	0
+109	579	1.0106094	0
+110	61	1.0005761	64
+110	64	1.0005761	64
+110	283	1.0030725	64
+110	330	1.0037445	64
+110	382	1.0048488	64
+110	462	1.0073452	64
+110	479	1.0080172	64
+110	503	1.0086892	64
+110	532	1.0093612	64
+111	61	1.0005761	64
+111	64	1.0005761	64
+111	283	1.0030725	64
+111	330	1.0037445	64
+111	382	1.0048488	64
+111	462	1.0073452	64
+111	479	1.0080172	64
+111	503	1.0086892	64
+111	532	1.0093612	64
+112	61	1.0005761	1
+112	61	1.0005761	0
+112	64	1.0005761	1
+112	91	1.0011521	0
+112	283	1.0030725	1
+112	283	1.0030725	0
+112	330	1.0037445	1
+112	330	1.0037445	0
+112	382	1.0048488	1
+112	382	1.0048488	0
+112	462	1.0073452	1
+112	462	1.0073452	0
+112	479	1.0080172	1
+112	479	1.0080172	0
+112	503	1.0086892	1
+112	503	1.0086892	0
+112	532	1.0093612	1
+112	532	1.0093612	0
+113	61	1.0005761	64
+113	91	1.0011521	64
+113	283	1.0030725	64
+113	330	1.0037445	64
+113	382	1.0048488	64
+113	462	1.0073452	64
+113	479	1.0080172	64
+113	503	1.0086892	64
+113	532	1.0093612	64
+114	61	1.0005761	0
+114	91	1.0011521	0.000576
+114	283	1.0030725	0
+114	330	1.0037445	0
+114	382	1.0048488	0
+114	462	1.0073452	0
+114	479	1.0080172	0
+114	503	1.0086892	0
+114	532	1.0093612	0
+115	62	1.0005761	64
+115	239	1.0024963	64
+115	384	1.0048488	64
+115	398	1.0049927	64
+116	62	1.0005761	64
+116	239	1.0024963	64
+116	384	1.0048488	64
+116	398	1.0049927	64
+117	62	1.0005761	1
+117	62	1.0005761	0
+117	239	1.0024963	1
+117	239	1.0024963	0
+117	384	1.0048488	1
+117	384	1.0048488	0
+117	398	1.0049927	1
+117	409	1.0054248	0
+118	62	1.0005761	64
+118	239	1.0024963	64
+118	384	1.0048488	64
+118	409	1.0054248	64
+119	62	1.0005761	0
+119	239	1.0024963	0
+119	384	1.0048488	0
+119	409	1.0054248	0.0004321
+120	65	1.0005761	64
+120	192	1.0018243	64
+120	369	1.0043207	64
+120	383	1.0048488	64
+121	65	1.0005761	64
+121	192	1.0018243	64
+121	369	1.0043207	64
+121	383	1.0048488	64
+122	65	1.0005761	1
+122	65	1.0005761	0
+122	192	1.0018243	1
+122	192	1.0018243	0
+122	369	1.0043207	1
+122	369	1.0043207	0
+122	383	1.0048488	1
+122	387	1.0048967	0
+123	65	1.0005761	64
+123	192	1.0018243	64
+123	369	1.0043207	64
+123	387	1.0048967	64
+124	65	1.0005761	0
+124	192	1.0018243	0
+124	369	1.0043207	0
+124	387	1.0048967	4.79e-05
+125	66	1.0005761	64
+125	68	1.0005761	64
+125	284	1.0030725	64
+125	331	1.0037445	64
+126	66	1.0005761	64
+126	68	1.0005761	64
+126	284	1.0030725	64
+126	331	1.0037445	64
+127	66	1.0005761	1
+127	66	1.0005761	0
+127	68	1.0005761	1
+127	92	1.0011521	0
+127	284	1.0030725	1
+127	284	1.0030725	0
+127	331	1.0037445	1
+127	331	1.0037445	0
+128	66	1.0005761	64
+128	92	1.0011521	64
+128	284	1.0030725	64
+128	331	1.0037445	64
+129	66	1.0005761	0
+129	92	1.0011521	0.000576
+129	284	1.0030725	0
+129	331	1.0037445	0
+130	67	1.0005761	64
+130	240	1.0024963	64
+130	646	1.0125777	64
+131	67	1.0005761	64
+131	240	1.0024963	64
+131	646	1.0125777	64
+132	67	1.0005761	1
+132	67	1.0005761	0
+132	240	1.0024963	1
+132	240	1.0024963	0
+132	646	1.0125777	1
+132	646	1.0125777	0
+133	67	1.0005761	64
+133	240	1.0024963	64
+133	646	1.0125777	64
+134	67	1.0005761	0
+134	240	1.0024963	0
+134	646	1.0125777	0
+135	69	1.0005761	64
+135	193	1.0018243	64
+135	606	1.0112337	64
+136	69	1.0005761	64
+136	193	1.0018243	64
+136	606	1.0112337	64
+137	69	1.0005761	1
+137	69	1.0005761	0
+137	193	1.0018243	1
+137	193	1.0018243	0
+137	606	1.0112337	1
+137	606	1.0112337	0
+138	69	1.0005761	64
+138	193	1.0018243	64
+138	606	1.0112337	64
+139	69	1.0005761	0
+139	193	1.0018243	0
+139	606	1.0112337	0
+140	89	1.0011521	64
+140	162	1.0018241	64
+140	297	1.0034565	64
+140	341	1.0041285	64
+141	90	1.0011521	64
+141	163	1.0018241	64
+141	444	1.006673	64
+141	509	1.0091694	64
+141	537	1.0098414	64
+141	566	1.0105134	64
+141	597	1.0111854	64
+142	91	1.0011521	64
+142	164	1.0018241	64
+142	308	1.0036485	64
+142	353	1.0043205	64
+142	408	1.0054248	64
+142	467	1.0079212	64
+142	486	1.0085932	64
+142	514	1.0092652	64
+142	542	1.0099372	64
+143	92	1.0011521	64
+143	165	1.0018241	64
+143	309	1.0036485	64
+143	354	1.0043205	64
+144	93	1.0011522	64
+144	166	1.0018242	64
+144	298	1.0034566	64
+144	342	1.0041286	64
+145	93	1.0011522	64
+145	166	1.0018242	64
+145	298	1.0034566	64
+145	342	1.0041286	64
+146	94	1.0011522	64
+146	169	1.0018242	64
+146	445	1.0066731	64
+146	510	1.0091695	64
+146	538	1.0098415	64
+146	567	1.0105135	64
+146	598	1.0111855	64
+147	94	1.0011522	64
+147	169	1.0018242	64
+147	445	1.0066731	64
+147	510	1.0091695	64
+147	538	1.0098415	64
+147	567	1.0105135	64
+147	598	1.0111855	64
+148	95	1.0011522	64
+148	170	1.0018242	64
+148	311	1.0036486	64
+148	356	1.0043206	64
+148	410	1.0054249	64
+148	468	1.0079213	64
+148	488	1.0085933	64
+148	516	1.0092653	64
+148	544	1.0099373	64
+149	95	1.0011522	64
+149	170	1.0018242	64
+149	311	1.0036486	64
+149	356	1.0043206	64
+149	410	1.0054249	64
+149	468	1.0079213	64
+149	488	1.0085933	64
+149	516	1.0092653	64
+149	544	1.0099373	64
+150	96	1.0011522	64
+150	171	1.0018242	64
+150	312	1.0036486	64
+150	357	1.0043206	64
+151	96	1.0011522	64
+151	171	1.0018242	64
+151	312	1.0036486	64
+151	357	1.0043206	64
+152	97	1.0011522	46
+152	173	1.0018242	46
+152	299	1.0034566	46
+152	343	1.0041286	46
+153	98	1.0011522	46
+153	174	1.0018242	46
+153	446	1.0066731	46
+153	511	1.0091695	46
+153	539	1.0098415	46
+153	568	1.0105135	46
+153	599	1.0111855	46
+154	99	1.0011522	46
+154	175	1.0018242	46
+154	313	1.0036486	46
+154	358	1.0043206	46
+154	412	1.0054249	46
+154	469	1.0079213	46
+154	489	1.0085933	46
+154	517	1.0092653	46
+154	545	1.0099373	46
+155	100	1.0011522	46
+155	176	1.0018242	46
+155	314	1.0036486	46
+155	359	1.0043206	46
+156	101	1.0011522	28
+156	177	1.0018242	28
+157	103	1.0011522	28
+157	179	1.0018242	28
+157	414	1.0054249	28
+158	104	1.0011522	28
+158	180	1.0018242	28
+159	105	1.0011522	28
+159	181	1.0018242	28
+159	560	1.0099856	44
+159	614	1.0113296	44
+160	106	1.0011522	28
+160	182	1.0018242	28
+160	320	1.0036486	44
+160	365	1.0043206	44
+160	416	1.0054249	28
+160	473	1.0079213	44
+160	493	1.0085933	44
+160	521	1.0092653	44
+160	549	1.0099373	44
+161	107	1.0011522	28
+161	183	1.0018242	28
+161	586	1.0106576	44
+161	633	1.0120016	44
+162	108	1.0011522	46
+162	184	1.0018242	46
+162	561	1.0099856	62
+162	615	1.0113296	62
+163	108	1.0011522	64
+163	184	1.0018242	64
+163	561	1.0099856	64
+163	615	1.0113296	64
+164	108	1.0011522	1
+164	108	1.0011522	0
+164	184	1.0018242	1
+164	184	1.0018242	0
+164	561	1.0099856	1
+164	561	1.0099856	0
+164	615	1.0113296	1
+164	615	1.0113296	0
+165	108	1.0011522	64
+165	184	1.0018242	64
+165	561	1.0099856	64
+165	615	1.0113296	64
+166	108	1.0011522	0
+166	184	1.0018242	0
+166	561	1.0099856	0
+166	615	1.0113296	0
+167	109	1.0011522	46
+167	185	1.0018242	46
+167	321	1.0036486	62
+167	366	1.0043206	62
+167	417	1.0054249	46
+167	474	1.0079213	62
+167	494	1.0085933	62
+167	522	1.0092653	62
+167	550	1.0099373	62
+168	109	1.0011522	64
+168	185	1.0018242	64
+168	321	1.0036486	64
+168	366	1.0043206	64
+168	417	1.0054249	64
+168	474	1.0079213	64
+168	494	1.0085933	64
+168	522	1.0092653	64
+168	550	1.0099373	64
+169	109	1.0011522	1
+169	109	1.0011522	0
+169	185	1.0018242	1
+169	185	1.0018242	0
+169	321	1.0036486	1
+169	321	1.0036486	0
+169	366	1.0043206	1
+169	366	1.0043206	0
+169	417	1.0054249	1
+169	417	1.0054249	0
+169	474	1.0079213	1
+169	474	1.0079213	0
+169	494	1.0085933	1
+169	494	1.0085933	0
+169	522	1.0092653	1
+169	522	1.0092653	0
+169	550	1.0099373	1
+169	550	1.0099373	0
+170	109	1.0011522	64
+170	185	1.0018242	64
+170	321	1.0036486	64
+170	366	1.0043206	64
+170	417	1.0054249	64
+170	474	1.0079213	64
+170	494	1.0085933	64
+170	522	1.0092653	64
+170	550	1.0099373	64
+171	109	1.0011522	0
+171	185	1.0018242	0
+171	321	1.0036486	0
+171	366	1.0043206	0
+171	417	1.0054249	0
+171	474	1.0079213	0
+171	494	1.0085933	0
+171	522	1.0092653	0
+171	550	1.0099373	0
+172	110	1.0011522	46
+172	186	1.0018242	46
+172	587	1.0106576	62
+172	634	1.0120016	62
+173	110	1.0011522	64
+173	186	1.0018242	64
+173	587	1.0106576	64
+173	634	1.0120016	64
+174	110	1.0011522	1
+174	110	1.0011522	0
+174	186	1.0018242	1
+174	186	1.0018242	0
+174	587	1.0106576	1
+174	587	1.0106576	0
+174	634	1.0120016	1
+174	634	1.0120016	0
+175	110	1.0011522	64
+175	186	1.0018242	64
+175	587	1.0106576	64
+175	634	1.0120016	64
+176	110	1.0011522	0
+176	186	1.0018242	0
+176	587	1.0106576	0
+176	634	1.0120016	0
+177	112	1.0012481	64
+177	205	1.0023043	64
+177	592	1.0111377	64
+178	113	1.0012481	64
+178	255	1.0029763	64
+178	637	1.0124817	64
+179	114	1.0012481	64
+179	214	1.0024003	64
+179	387	1.0048967	64
+179	424	1.0055687	64
+180	115	1.0012481	64
+180	264	1.0030723	64
+180	409	1.0054248	64
+180	430	1.0060968	64
+181	116	1.0012481	64
+181	215	1.0024003	64
+181	618	1.0118097	64
+182	117	1.0012481	64
+182	265	1.0030723	64
+182	650	1.0131537	64
+183	122	1.0012482	64
+183	206	1.0023044	64
+183	593	1.0111378	64
+184	122	1.0012482	64
+184	206	1.0023044	64
+184	593	1.0111378	64
+185	123	1.0012482	64
+185	256	1.0029764	64
+185	638	1.0124818	64
+186	123	1.0012482	64
+186	256	1.0029764	64
+186	638	1.0124818	64
+187	124	1.0012482	64
+187	219	1.0024004	64
+187	388	1.0048968	64
+187	425	1.0055688	64
+188	124	1.0012482	64
+188	219	1.0024004	64
+188	388	1.0048968	64
+188	425	1.0055688	64
+189	125	1.0012482	64
+189	269	1.0030724	64
+189	411	1.0054249	64
+189	432	1.0060969	64
+190	125	1.0012482	64
+190	269	1.0030724	64
+190	411	1.0054249	64
+190	432	1.0060969	64
+191	126	1.0012482	64
+191	220	1.0024004	64
+191	619	1.0118098	64
+192	126	1.0012482	64
+192	220	1.0024004	64
+192	619	1.0118098	64
+193	127	1.0012482	64
+193	270	1.0030724	64
+193	651	1.0131538	64
+194	127	1.0012482	64
+194	270	1.0030724	64
+194	651	1.0131538	64
+195	134	1.0012482	46
+195	207	1.0023044	46
+195	594	1.0111378	46
+196	135	1.0012482	46
+196	258	1.0029764	46
+196	639	1.0124818	46
+197	136	1.0012482	46
+197	221	1.0024004	46
+197	389	1.0048968	46
+197	426	1.0055688	46
+198	137	1.0012482	46
+198	271	1.0030724	46
+198	413	1.0054249	46
+198	433	1.0060969	46
+199	138	1.0012482	46
+199	222	1.0024004	46
+199	620	1.0118098	46
+200	139	1.0012482	46
+200	272	1.0030724	46
+200	652	1.0131538	46
+201	158	1.0017282	64
+201	212	1.0024002	64
+201	571	1.0105616	64
+201	623	1.0119056	64
+202	159	1.0017283	64
+202	213	1.0024003	64
+202	572	1.0105617	64
+202	624	1.0119057	64
+203	159	1.0017283	64
+203	213	1.0024003	64
+203	572	1.0105617	64
+203	624	1.0119057	64
+204	167	1.0018242	64
+204	229	1.0024962	64
+204	355	1.0043206	64
+204	394	1.0049926	64
+204	431	1.0060969	64
+204	487	1.0085933	64
+204	515	1.0092653	64
+204	543	1.0099373	64
+204	575	1.0106093	64
+205	168	1.0018242	64
+205	230	1.0024962	64
+205	602	1.0112336	64
+205	642	1.0125776	64
+206	187	1.0018243	64
+206	232	1.0024963	64
+206	367	1.0043207	64
+206	395	1.0049927	64
+206	436	1.006097	64
+206	495	1.0085934	64
+206	523	1.0092654	64
+206	551	1.0099374	64
+206	576	1.0106094	64
+207	187	1.0018243	64
+207	232	1.0024963	64
+207	367	1.0043207	64
+207	395	1.0049927	64
+207	436	1.006097	64
+207	495	1.0085934	64
+207	523	1.0092654	64
+207	551	1.0099374	64
+207	576	1.0106094	64
+208	188	1.0018243	64
+208	233	1.0024963	64
+208	603	1.0112337	64
+208	643	1.0125777	64
+209	188	1.0018243	64
+209	233	1.0024963	64
+209	603	1.0112337	64
+209	643	1.0125777	64
+210	301	1.0034566	44
+210	345	1.0041286	44
+211	301	1.0034566	44
+211	345	1.0041286	44
+212	301	1.0034566	1
+212	301	1.0034566	0
+212	345	1.0041286	1
+212	347	1.0042726	0
+213	301	1.0034566	44
+213	347	1.0042726	44
+214	301	1.0034566	0
+214	347	1.0042726	0.000144
+215	301	1.0034566	51
+215	347	1.0042726	51
+216	317	1.0036486	250000
+216	362	1.0043206	250000
+216	471	1.0079213	250000
+216	491	1.0085933	250000
+216	519	1.0092653	250000
+216	547	1.0099373	250000
+217	317	1.0036486	0
+217	362	1.0043206	0
+217	471	1.0079213	0
+217	491	1.0085933	0
+217	519	1.0092653	0
+217	547	1.0099373	0
+218	317	1.0036486	257505
+218	317	1.0036486	257505
+219	317	1.0036486	7504
+220	317	1.0036486	0
+221	317	1.0036486	7504
+222	317	1.0036486	250001
+223	318	1.0036486	44
+223	363	1.0043206	44
+224	318	1.0036486	44
+224	363	1.0043206	44
+225	318	1.0036486	1
+225	318	1.0036486	0
+225	363	1.0043206	1
+225	376	1.0044646	0
+226	318	1.0036486	44
+226	376	1.0044646	44
+227	318	1.0036486	0
+227	376	1.0044646	0.000144
+228	318	1.0036486	51
+228	376	1.0044646	51
+229	348	1.0042727	51
+229	403	1.0050887	51
+230	348	1.0042727	44
+230	403	1.0050887	44
+231	349	1.0042727	28
+232	350	1.0042727	28
+232	448	1.0066731	44
+232	449	1.0066731	44
+232	450	1.0066731	44
+232	451	1.0066731	44
+233	351	1.0042727	46
+233	452	1.0066731	62
+233	453	1.0066731	62
+233	454	1.0066731	62
+233	455	1.0066731	62
+234	351	1.0042727	64
+234	452	1.0066731	64
+234	453	1.0066731	64
+234	454	1.0066731	64
+234	455	1.0066731	64
+235	351	1.0042727	1
+235	351	1.0042727	0
+235	452	1.0066731	1
+235	452	1.0066731	0
+235	453	1.0066731	1
+235	454	1.0066731	2
+235	455	1.0066731	3
+235	459	1.0073451	2
+235	475	1.0080171	1
+235	499	1.0086891	0
+236	351	1.0042727	64
+236	452	1.0066731	64
+236	459	1.0073451	64
+236	475	1.0080171	64
+236	499	1.0086891	64
+237	351	1.0042727	0
+237	452	1.0066731	0
+237	459	1.0073451	0.000672
+237	475	1.0080171	0.001344
+237	499	1.0086891	0.002016
+238	362	1.0043206	257505
+238	362	1.0043206	257505
+239	362	1.0043206	7504
+240	362	1.0043206	0
+241	362	1.0043206	7504
+242	362	1.0043206	250001
+243	377	1.0044647	51
+243	406	1.0052807	51
+244	377	1.0044647	44
+244	406	1.0052807	44
+245	379	1.0048487	64
+245	459	1.0073451	64
+245	475	1.0080171	64
+245	499	1.0086891	64
+245	528	1.0093611	64
+246	380	1.0048488	64
+246	460	1.0073452	64
+246	476	1.0080172	64
+246	500	1.0086892	64
+246	529	1.0093612	64
+247	380	1.0048488	64
+247	460	1.0073452	64
+247	476	1.0080172	64
+247	500	1.0086892	64
+247	529	1.0093612	64
+248	391	1.0048968	250912
+249	391	1.0048968	250001
+250	391	1.0048968	7504
+251	435	1.0060969	251080
+252	435	1.0060969	250001
+253	435	1.0060969	7504
+254	471	1.0079213	257505
+254	471	1.0079213	257505
+255	471	1.0079213	7504
+256	471	1.0079213	0
+257	471	1.0079213	7504
+258	471	1.0079213	250001
+259	491	1.0085933	257505
+259	491	1.0085933	257505
+260	491	1.0085933	7504
+261	491	1.0085933	0
+262	491	1.0085933	7504
+263	491	1.0085933	250001
+264	513	1.0091695	44
+264	570	1.0105135	44
+265	513	1.0091695	44
+265	570	1.0105135	44
+266	513	1.0091695	1
+266	513	1.0091695	0
+266	570	1.0105135	1
+266	570	1.0105135	0
+267	513	1.0091695	44
+267	570	1.0105135	44
+268	513	1.0091695	0
+268	570	1.0105135	0
+269	513	1.0091695	51
+269	570	1.0105135	51
+270	519	1.0092653	257505
+270	519	1.0092653	257505
+271	519	1.0092653	7504
+272	519	1.0092653	0
+273	519	1.0092653	7504
+274	519	1.0092653	250001
+275	541	1.0098415	44
+275	601	1.0111855	44
+276	541	1.0098415	44
+276	601	1.0111855	44
+277	541	1.0098415	1
+277	541	1.0098415	0
+277	601	1.0111855	1
+277	601	1.0111855	0
+278	541	1.0098415	44
+278	601	1.0111855	44
+279	541	1.0098415	0
+279	601	1.0111855	0
+280	541	1.0098415	51
+280	601	1.0111855	51
+281	547	1.0099373	257505
+281	547	1.0099373	257505
+282	547	1.0099373	7504
+283	547	1.0099373	0
+284	547	1.0099373	7504
+285	547	1.0099373	250001
+286	558	1.0099856	51
+286	611	1.0113296	51
+287	558	1.0099856	44
+287	611	1.0113296	44
+288	583	1.0106576	51
+288	630	1.0120016	51
+289	583	1.0106576	44
+289	630	1.0120016	44
+290	596	1.0111378	251980
+291	596	1.0111378	250001
+292	596	1.0111378	7504
+293	622	1.0118098	252148
+294	622	1.0118098	250001
+295	622	1.0118098	7504
+296	641	1.0124818	252316
+297	641	1.0124818	250001
+298	641	1.0124818	7504
+299	654	1.0131538	252484
+300	654	1.0131538	250001
+301	654	1.0131538	7504
+vector 302 TcpSynAttack.服务器.tcp.conn-19 rcvSeq:vector ETV
+attr interpolationmode sample-hold
+vector 303 TcpSynAttack.服务器.tcp.conn-19 rcvAck:vector ETV
+attr interpolationmode sample-hold
+vector 304 TcpSynAttack.服务器.tcp.conn-19 rcvNASeg:vector ETV
+attr interpolationmode sample-hold
+vector 305 TcpSynAttack.服务器.tcp.conn-20 rcvSeq:vector ETV
+attr interpolationmode sample-hold
+vector 306 TcpSynAttack.服务器.tcp.conn-20 rcvAck:vector ETV
+attr interpolationmode sample-hold
+vector 307 TcpSynAttack.服务器.tcp.conn-20 rcvNASeg:vector ETV
+attr interpolationmode sample-hold
+vector 308 TcpSynAttack.服务器.tcp.conn-21 rcvSeq:vector ETV
+attr interpolationmode sample-hold
+vector 309 TcpSynAttack.服务器.tcp.conn-21 rcvAck:vector ETV
+attr interpolationmode sample-hold
+vector 310 TcpSynAttack.服务器.tcp.conn-21 rcvNASeg:vector ETV
+attr interpolationmode sample-hold
+vector 311 TcpSynAttack.服务器.tcp.conn-22 rcvSeq:vector ETV
+attr interpolationmode sample-hold
+vector 312 TcpSynAttack.服务器.tcp.conn-22 rcvAck:vector ETV
+attr interpolationmode sample-hold
+vector 313 TcpSynAttack.服务器.tcp.conn-22 rcvNASeg:vector ETV
+attr interpolationmode sample-hold
+vector 314 TcpSynAttack.服务器.tcp.conn-23 rcvSeq:vector ETV
+attr interpolationmode sample-hold
+vector 315 TcpSynAttack.服务器.tcp.conn-23 rcvAck:vector ETV
+attr interpolationmode sample-hold
+vector 316 TcpSynAttack.服务器.tcp.conn-23 rcvNASeg:vector ETV
+attr interpolationmode sample-hold
+vector 317 TcpSynAttack.服务器.tcp.conn-24 rcvSeq:vector ETV
+attr interpolationmode sample-hold
+vector 318 TcpSynAttack.服务器.tcp.conn-24 rcvAck:vector ETV
+attr interpolationmode sample-hold
+vector 319 TcpSynAttack.服务器.tcp.conn-24 rcvNASeg:vector ETV
+attr interpolationmode sample-hold
+0	737	4.0011522	1
+0	780	4.0019682	0
+0	780	4.0019682	1
+0	813	4.0027842	0
+2	884	4.0044166	1
+2	914	4.0051686	0
+3	946	4.0057606	1
+3	970	4.0065126	0
+4	739	4.0011522	1
+4	781	4.0019682	0
+4	781	4.0019682	1
+4	814	4.0027842	0
+6	657	4	0
+7	657	4	259485
+8	657	4	7504
+9	657	4	0
+10	658	4	0
+11	658	4	259821
+12	658	4	7504
+13	658	4	0
+14	659	4	0
+15	659	4	258417
+15	913	4.0050886	258417
+16	659	4	7504
+17	659	4	0
+18	660	4	0
+19	660	4	258585
+19	969	4.0064326	258585
+20	660	4	7504
+21	660	4	0
+22	661	4	0
+23	661	4	259653
+24	661	4	7504
+25	661	4	0
+26	662	4	0
+27	662	4	259989
+28	662	4	7504
+29	662	4	0
+36	669	4	44
+37	670	4	44
+38	671	4	44
+39	672	4	44
+40	673	4	44
+41	674	4	44
+42	675	4	62
+43	675	4	64
+44	675	4	1
+44	675	4	0
+45	675	4	64
+46	675	4	0
+47	676	4	62
+48	676	4	64
+49	676	4	1
+49	676	4	0
+50	676	4	64
+51	676	4	0
+52	677	4	62
+53	677	4	64
+54	677	4	1
+54	677	4	0
+55	677	4	64
+56	677	4	0
+57	678	4	62
+58	678	4	64
+59	678	4	1
+59	678	4	0
+60	678	4	64
+61	678	4	0
+62	679	4	62
+63	679	4	64
+64	679	4	1
+64	679	4	0
+65	679	4	64
+66	679	4	0
+67	680	4	62
+68	680	4	64
+69	680	4	1
+69	680	4	0
+70	680	4	64
+71	680	4	0
+72	687	4.000576	64
+73	688	4.000576	64
+74	689	4.000576	64
+75	690	4.000576	64
+76	691	4.000576	64
+77	692	4.000576	64
+78	693	4.0005761	64
+79	693	4.0005761	64
+80	694	4.0005761	64
+81	694	4.0005761	64
+82	695	4.0005761	64
+83	695	4.0005761	64
+84	696	4.0005761	64
+85	696	4.0005761	64
+86	697	4.0005761	64
+87	697	4.0005761	64
+88	698	4.0005761	64
+89	698	4.0005761	64
+90	705	4.0005761	64
+90	706	4.0005761	64
+91	705	4.0005761	64
+91	706	4.0005761	64
+92	705	4.0005761	1
+92	705	4.0005761	0
+92	706	4.0005761	1
+92	725	4.0011521	0
+93	705	4.0005761	64
+93	725	4.0011521	64
+94	705	4.0005761	0
+94	725	4.0011521	0.000576
+100	941	4.0057448	64
+101	941	4.0057448	64
+102	941	4.0057448	1
+102	941	4.0057448	0
+103	941	4.0057448	64
+104	941	4.0057448	0
+105	864	4.0038405	64
+105	932	4.0051845	64
+106	864	4.0038405	64
+106	932	4.0051845	64
+107	864	4.0038405	1
+107	864	4.0038405	0
+107	932	4.0051845	1
+107	932	4.0051845	0
+108	864	4.0038405	64
+108	932	4.0051845	64
+109	864	4.0038405	0
+109	932	4.0051845	0
+110	707	4.0005761	64
+110	708	4.0005761	64
+110	806	4.0025444	64
+110	841	4.0032164	64
+110	869	4.0038884	64
+110	902	4.0045604	64
+111	707	4.0005761	64
+111	708	4.0005761	64
+111	806	4.0025444	64
+111	841	4.0032164	64
+111	869	4.0038884	64
+111	902	4.0045604	64
+112	707	4.0005761	1
+112	707	4.0005761	0
+112	708	4.0005761	1
+112	726	4.0011521	0
+112	806	4.0025444	1
+112	806	4.0025444	0
+112	841	4.0032164	1
+112	841	4.0032164	0
+112	869	4.0038884	1
+112	869	4.0038884	0
+112	902	4.0045604	1
+112	902	4.0045604	0
+113	707	4.0005761	64
+113	726	4.0011521	64
+113	806	4.0025444	64
+113	841	4.0032164	64
+113	869	4.0038884	64
+113	902	4.0045604	64
+114	707	4.0005761	0
+114	726	4.0011521	0.000576
+114	806	4.0025444	0
+114	841	4.0032164	0
+114	869	4.0038884	0
+114	902	4.0045604	0
+115	800	4.0024963	64
+115	953	4.0058565	64
+116	800	4.0024963	64
+116	953	4.0058565	64
+117	800	4.0024963	1
+117	800	4.0024963	0
+117	953	4.0058565	1
+117	953	4.0058565	0
+118	800	4.0024963	64
+118	953	4.0058565	64
+119	800	4.0024963	0
+119	953	4.0058565	0
+120	772	4.0018243	64
+120	897	4.0045125	64
+121	772	4.0018243	64
+121	897	4.0045125	64
+122	772	4.0018243	1
+122	772	4.0018243	0
+122	897	4.0045125	1
+122	897	4.0045125	0
+123	772	4.0018243	64
+123	897	4.0045125	64
+124	772	4.0018243	0
+124	897	4.0045125	0
+125	709	4.0005761	64
+125	710	4.0005761	64
+126	709	4.0005761	64
+126	710	4.0005761	64
+127	709	4.0005761	1
+127	709	4.0005761	0
+127	710	4.0005761	1
+127	727	4.0011521	0
+128	709	4.0005761	64
+128	727	4.0011521	64
+129	709	4.0005761	0
+129	727	4.0011521	0.000576
+140	725	4.0011521	64
+140	751	4.0018241	64
+141	880	4.0044165	64
+141	942	4.0057605	64
+142	726	4.0011521	64
+142	752	4.0018241	64
+142	828	4.0031683	64
+142	853	4.0038403	64
+142	885	4.0045123	64
+142	920	4.0051843	64
+143	727	4.0011521	64
+143	753	4.0018241	64
+144	728	4.0011522	64
+144	754	4.0018242	64
+145	728	4.0011522	64
+145	754	4.0018242	64
+146	881	4.0044166	64
+146	943	4.0057606	64
+147	881	4.0044166	64
+147	943	4.0057606	64
+148	729	4.0011522	64
+148	756	4.0018242	64
+148	830	4.0031684	64
+148	855	4.0038404	64
+148	887	4.0045124	64
+148	922	4.0051844	64
+149	729	4.0011522	64
+149	756	4.0018242	64
+149	830	4.0031684	64
+149	855	4.0038404	64
+149	887	4.0045124	64
+149	922	4.0051844	64
+150	730	4.0011522	64
+150	757	4.0018242	64
+151	730	4.0011522	64
+151	757	4.0018242	64
+152	731	4.0011522	46
+152	758	4.0018242	46
+153	882	4.0044166	46
+153	944	4.0057606	46
+154	732	4.0011522	46
+154	759	4.0018242	46
+154	832	4.0031684	46
+154	856	4.0038404	46
+154	888	4.0045124	46
+154	923	4.0051844	46
+155	733	4.0011522	46
+155	760	4.0018242	46
+159	917	4.0051687	40
+160	741	4.0011522	40
+160	768	4.0018242	40
+160	836	4.0031684	40
+160	851	4.0036486	44
+160	860	4.0038404	40
+160	878	4.0043206	44
+160	892	4.0045124	40
+160	927	4.0051844	40
+161	973	4.0065127	40
+162	918	4.0051687	58
+163	918	4.0051687	64
+164	918	4.0051687	1
+164	918	4.0051687	0
+165	918	4.0051687	64
+166	918	4.0051687	0
+167	742	4.0011522	58
+167	769	4.0018242	58
+167	837	4.0031684	58
+167	852	4.0036486	62
+167	861	4.0038404	58
+167	879	4.0043206	62
+167	893	4.0045124	58
+167	928	4.0051844	58
+168	742	4.0011522	64
+168	769	4.0018242	64
+168	837	4.0031684	64
+168	852	4.0036486	64
+168	861	4.0038404	64
+168	879	4.0043206	64
+168	893	4.0045124	64
+168	928	4.0051844	64
+169	742	4.0011522	1
+169	742	4.0011522	0
+169	769	4.0018242	1
+169	769	4.0018242	0
+169	837	4.0031684	1
+169	837	4.0031684	0
+169	852	4.0036486	1
+169	854	4.0038404	0
+169	861	4.0038404	1
+169	879	4.0043206	2
+169	886	4.0045124	1
+169	893	4.0045124	2
+169	921	4.0051844	1
+169	928	4.0051844	2
+169	949	4.0058564	1
+169	976	4.0065284	0
+170	742	4.0011522	64
+170	769	4.0018242	64
+170	837	4.0031684	64
+170	854	4.0038404	64
+170	886	4.0045124	64
+170	921	4.0051844	64
+170	949	4.0058564	64
+170	976	4.0065284	64
+171	742	4.0011522	0
+171	769	4.0018242	0
+171	837	4.0031684	0
+171	854	4.0038404	0.0001918
+171	886	4.0045124	0.000672
+171	921	4.0051844	0.0008638
+171	949	4.0058564	0.001344
+171	976	4.0065284	0.001344
+172	974	4.0065127	58
+173	974	4.0065127	64
+174	974	4.0065127	1
+174	974	4.0065127	0
+175	974	4.0065127	64
+176	974	4.0065127	0
+177	959	4.0063208	64
+179	791	4.0024003	64
+179	909	4.0050885	64
+180	823	4.0030723	64
+180	965	4.0064325	64
+183	960	4.0063209	64
+184	960	4.0063209	64
+187	792	4.0024004	64
+187	910	4.0050886	64
+188	792	4.0024004	64
+188	910	4.0050886	64
+189	824	4.0030724	64
+189	966	4.0064326	64
+190	824	4.0030724	64
+190	966	4.0064326	64
+195	961	4.0063209	46
+197	793	4.0024004	46
+197	911	4.0050886	46
+198	825	4.0030724	46
+198	967	4.0064326	46
+201	938	4.0057447	64
+202	939	4.0057448	64
+203	939	4.0057448	64
+204	755	4.0018242	64
+204	796	4.0024962	64
+204	854	4.0038404	64
+204	886	4.0045124	64
+204	921	4.0051844	64
+204	949	4.0058564	64
+204	976	4.0065284	64
+206	770	4.0018243	64
+206	797	4.0024963	64
+206	862	4.0038405	64
+206	894	4.0045125	64
+206	929	4.0051845	64
+206	950	4.0058565	64
+207	770	4.0018243	64
+207	797	4.0024963	64
+207	862	4.0038405	64
+207	894	4.0045125	64
+207	929	4.0051845	64
+207	950	4.0058565	64
+210	737	4.0011522	44
+210	764	4.0018242	44
+211	737	4.0011522	44
+211	764	4.0018242	44
+212	737	4.0011522	1
+212	737	4.0011522	0
+212	764	4.0018242	1
+212	780	4.0019682	0
+213	737	4.0011522	44
+213	780	4.0019682	44
+214	737	4.0011522	0
+214	780	4.0019682	0.000144
+215	737	4.0011522	51
+215	780	4.0019682	51
+218	738	4.0011522	257505
+218	849	4.0036486	257505
+220	738	4.0011522	0
+220	849	4.0036486	0
+221	738	4.0011522	7504
+221	849	4.0036486	7504
+222	738	4.0011522	250001
+222	849	4.0036486	250001
+223	739	4.0011522	44
+223	766	4.0018242	44
+224	739	4.0011522	44
+224	766	4.0018242	44
+225	739	4.0011522	1
+225	739	4.0011522	0
+225	766	4.0018242	1
+225	781	4.0019682	0
+226	739	4.0011522	44
+226	781	4.0019682	44
+227	739	4.0011522	0
+227	781	4.0019682	0.000144
+228	739	4.0011522	51
+228	781	4.0019682	51
+229	782	4.0019683	51
+229	815	4.0027843	51
+230	782	4.0019683	44
+230	815	4.0027843	44
+232	786	4.0019683	44
+232	787	4.0019683	44
+232	819	4.0027843	44
+232	820	4.0027843	44
+233	788	4.0019683	62
+233	789	4.0019683	62
+233	821	4.0027843	62
+233	822	4.0027843	62
+234	788	4.0019683	64
+234	789	4.0019683	64
+234	821	4.0027843	64
+234	822	4.0027843	64
+235	788	4.0019683	1
+235	788	4.0019683	0
+235	789	4.0019683	1
+235	803	4.0025443	0
+235	821	4.0027843	1
+235	822	4.0027843	2
+235	838	4.0032163	1
+235	866	4.0038883	0
+236	788	4.0019683	64
+236	803	4.0025443	64
+236	838	4.0032163	64
+236	866	4.0038883	64
+237	788	4.0019683	0
+237	803	4.0025443	0.000576
+237	838	4.0032163	0.000432
+237	866	4.0038883	0.001104
+238	765	4.0018242	257505
+238	876	4.0043206	257505
+240	765	4.0018242	0
+240	876	4.0043206	0
+241	765	4.0018242	7504
+241	876	4.0043206	7504
+242	765	4.0018242	250001
+242	876	4.0043206	250001
+243	783	4.0019683	51
+243	816	4.0027843	51
+244	783	4.0019683	44
+244	816	4.0027843	44
+245	803	4.0025443	64
+245	838	4.0032163	64
+245	866	4.0038883	64
+245	899	4.0045603	64
+246	804	4.0025444	64
+246	839	4.0032164	64
+246	867	4.0038884	64
+246	900	4.0045604	64
+247	804	4.0025444	64
+247	839	4.0032164	64
+247	867	4.0038884	64
+247	900	4.0045604	64
+248	795	4.0024004	250913
+248	913	4.0050886	250912
+249	795	4.0024004	250001
+249	913	4.0050886	250001
+250	913	4.0050886	7504
+251	827	4.0030724	251081
+251	969	4.0064326	251080
+252	827	4.0030724	250001
+252	969	4.0064326	250001
+253	969	4.0064326	7504
+254	834	4.0031684	257505
+256	834	4.0031684	0
+257	834	4.0031684	7504
+258	834	4.0031684	250001
+259	858	4.0038404	257505
+261	858	4.0038404	0
+262	858	4.0038404	7504
+263	858	4.0038404	250001
+264	884	4.0044166	40
+265	884	4.0044166	40
+266	884	4.0044166	1
+266	884	4.0044166	0
+267	884	4.0044166	40
+268	884	4.0044166	0
+269	884	4.0044166	47
+270	890	4.0045124	257505
+272	890	4.0045124	0
+273	890	4.0045124	7504
+274	890	4.0045124	250001
+275	946	4.0057606	40
+276	946	4.0057606	40
+277	946	4.0057606	1
+277	946	4.0057606	0
+278	946	4.0057606	40
+279	946	4.0057606	0
+280	946	4.0057606	47
+281	925	4.0051844	257505
+283	925	4.0051844	0
+284	925	4.0051844	7504
+285	925	4.0051844	250001
+286	915	4.0051687	47
+287	915	4.0051687	40
+288	971	4.0065127	47
+289	971	4.0065127	40
+290	963	4.0063209	251981
+291	963	4.0063209	250001
+302	738	4.0011522	250000
+303	738	4.0011522	0
+304	738	4.0011522	1
+305	765	4.0018242	250000
+306	765	4.0018242	0
+307	765	4.0018242	1
+308	834	4.0031684	250000
+309	834	4.0031684	0
+310	834	4.0031684	1
+311	858	4.0038404	250000
+312	858	4.0038404	0
+313	858	4.0038404	1
+314	890	4.0045124	250000
+315	890	4.0045124	0
+316	890	4.0045124	1
+317	925	4.0051844	250000
+318	925	4.0051844	0
+319	925	4.0051844	1
+

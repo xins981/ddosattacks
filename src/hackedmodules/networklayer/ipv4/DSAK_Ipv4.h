@@ -43,7 +43,8 @@ using namespace inet;
  * @date 01/22/2013
  *
  */
-class INET_API DSAK_Ipv4 : public Ipv4, public DSAK_HackedModule {
+class DSAK_Ipv4 : public Ipv4, public DSAK_HackedModule
+{
 
 private:
 
