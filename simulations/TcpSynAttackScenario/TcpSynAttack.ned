@@ -1,18 +1,3 @@
-//
-// This program is free software: you can redistribute it and/or modify
-// it under the terms of the GNU Lesser General Public License as published by
-// the Free Software Foundation, either version 3 of the License, or
-// (at your option) any later version.
-// 
-// This program is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU Lesser General Public License for more details.
-// 
-// You should have received a copy of the GNU Lesser General Public License
-// along with this program.  If not, see http://www.gnu.org/licenses/.
-// 
-
 package ddosattacks.simulations.TcpSynAttackScenario;
 
 import inet.networklayer.configurator.ipv4.Ipv4NetworkConfigurator;
@@ -23,8 +8,6 @@ import inet.visualizer.integrated.IntegratedVisualizer;
 import inet.applications.pingapp.PingApp;
 import inet.linklayer.ethernet.EtherBus;
 import inet.node.ethernet.EtherLink;
-
-import ddosattacks.nodes.DSAK_StandardHost;
 
 network TcpSynAttack
 {
@@ -47,7 +30,7 @@ network TcpSynAttack
         configurator: Ipv4NetworkConfigurator;
         交换机[3]: EtherSwitch;
         路由器[3]: Router; // predefined router
-        被控主机[numSubnet1Attackers + numSubnet2Attackers + numSubnet3Attackers]: DSAK_StandardHost
+        被控主机[numSubnet1Attackers + numSubnet2Attackers + numSubnet3Attackers]: StandardHost
 		{
             @display("i=device/laptop,red;");
         };

@@ -12,35 +12,8 @@ namespace dsak
 {
     namespace tcp
     {
-        TcpEventCode DSAK_TcpConnection::process_RCV_SEGMENT(Packet *packet, const Ptr<const TcpHeader>& tcpseg, L3Address src, L3Address dest)
-        {
-            EV_INFO << "Seg arrived: ";
-            printSegmentBrief(packet, tcpseg);
-            EV_DETAIL << "TCB: " << state->str() << "\n";
 
-            emit(rcvSeqSignal, tcpseg->getSequenceNo());
-            emit(rcvAckSignal, tcpseg->getAckNo());
-
-            //
-            // Note: this code is organized exactly as RFC 793, section "3.9 Event
-            // Processing", subsection "SEGMENT ARRIVES".
-            //
-            TcpEventCode event;
-
-            if (fsm.getState() == TCP_S_LISTEN) {
-                event = processSegmentInListen(packet, tcpseg, src, dest);
-            }
-            else if (fsm.getState() == TCP_S_SYN_SENT) {
-                event = DSAK_TcpConnection::processSegmentInSynSent(packet, tcpseg, src, dest);
-            }
-            else {
-                // RFC 793 steps "first check sequence number", "second check the RST bit", etc
-                event = processSegment1stThru8th(packet, tcpseg);
-            }
-
-            delete packet;
-            return event;
-        }
+        Define_Module(DSAK_TcpConnection);
 
         TcpEventCode DSAK_TcpConnection::processSegmentInSynSent(Packet *packet, const Ptr<const TcpHeader>& tcpseg, L3Address srcAddr, L3Address destAddr)
         {
@@ -264,6 +237,7 @@ namespace dsak
                 //"
                 return TCP_E_IGNORE;
         }
+
     }
 }
 
