@@ -37,6 +37,7 @@ network TcpSynAttack
         服务器: StandardHost
         {
             @display("i=device/server");
+            @statistic[NumReceivedIpPackets](source=count(packetReceivedFromLower); record=vector);
         };
         visualizer: IntegratedVisualizer;
     connections: // network level connections
