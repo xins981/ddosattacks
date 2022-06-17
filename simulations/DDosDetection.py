@@ -33,18 +33,23 @@ class Detecter:
         self.recived_packets = None
         self.traffic = [0]
         self.traffic_mean = [0]
-        self.dvar = [0]
+        self.dvar = [-1]
         self.time = [0]
         self.max_time = 0
 
-        self.line_traffic_mean = Line2D(self.time, self.traffic_mean, label='流量均值')
-        self.line_normal_traffic = Line2D(self.time, self.traffic, color='g', label='正常流量')
-        self.line_alert_traffic = Line2D(self.time, self.traffic, color='r', label='异常流量')
+        self.is_update = False
+        self.have_data = False
+
+        self.line_normal_traffic = Line2D(self.time, self.traffic, linewidth=2, color='tab:green', label='正常流量')
+        self.line_alert_traffic = Line2D(self.time, self.traffic, linewidth=2, color='tab:red', label='异常流量')
+        self.line_traffic_mean = Line2D(self.time, self.traffic_mean, linewidth=2, color='tab:orange', label='流量均值', linestyle='--')
+        self.line_dvar = Line2D(self.time, self.traffic, linewidth=2, color='#9467bd', linestyle='-.', label='差分方差')
 
         self.ax.add_line(self.line_traffic_mean)
         self.ax.add_line(self.line_normal_traffic)
         self.ax.add_line(self.line_alert_traffic)
-        ax.legend()
+        self.ax.add_line(self.line_dvar)
+        ax.legend(loc='best')
     
     def GetVector(self):
         try:
@@ -53,11 +58,17 @@ class Detecter:
                 'vecvalue': parse_ndarray
             })
             target_row = statistics[(statistics.type == 'vector') & (statistics.name == self.statistic_name)].iloc[0]
-            self.time_seq = target_row.vectime
-            self.recived_packets = target_row.vecvalue
+            time = target_row.vectime.astype(int)
+            recived_packets = target_row.vecvalue.astype(int)
+            if np.array_equiv(self.time_seq, time) and np.array_equiv(self.recived_packets, recived_packets):
+                self.is_update = False
+            else:
+                self.time_seq = time
+                self.recived_packets = recived_packets
+                self.is_update = True
+            self.have_data = True
         except:
-            self.time_seq = None
-            self.recived_packets = None
+            self.have_data = False
 
     def GetTraffic(self):
         self.max_time = max(self.time_seq) + 1
@@ -142,9 +153,7 @@ class Detecter:
     def Update(self, i):
         # 获取最新数据
         self.GetVector()
-        if (not self.time_seq is None) and (not self.recived_packets is None):
-            self.time_seq = self.time_seq.astype(int)
-            self.recived_packets = self.recived_packets.astype(int)
+        if self.have_data and self.is_update:
             self.GetTraffic()
             alert_time_list = self.GetAlertTime()
             self.time = np.arange(0, self.max_time)
@@ -154,22 +163,22 @@ class Detecter:
             # 更新坐标轴
             xmin, xmax = ax.get_xlim()
             if self.max_time > xmax:
-                ax.set_xlim(0, 2 * self.max_time)
+                ax.set_xlim(0, 1.05 * self.max_time)
                 ax.figure.canvas.draw()
             ymin, ymax = ax.get_ylim()
 
-            max_statistic_value = np.max(np.append(self.traffic, self.traffic_mean))
+            max_statistic_value = np.max(np.append(np.append(self.traffic, self.traffic_mean), self.dvar))
             if max_statistic_value > ymax:
-                ax.set_ylim(0, 2 * max_statistic_value)
+                ax.set_ylim(0, 1.05 * max_statistic_value)
                 ax.figure.canvas.draw()
 
             # 更新折线
-            self.line_traffic_mean.set_data(self.time, self.traffic_mean)
             self.line_normal_traffic.set_data(self.normal_time, self.traffic)
             self.line_alert_traffic.set_data(self.alert_time, self.traffic)
-            # self.line_traffic_dvar(time, ndarrDvar, label='Dvar', label='差分方差')
+            self.line_traffic_mean.set_data(self.time, self.traffic_mean)
+            self.line_dvar.set_data(self.time, self.dvar)
 
-        return self.line_traffic_mean, self.line_normal_traffic, self.line_alert_traffic,
+            return self.line_traffic_mean, self.line_normal_traffic, self.line_alert_traffic, self.line_dvar
 
 def parse_ndarray(value):
     return np.fromstring(value, sep=' ') if value else None
@@ -177,25 +186,44 @@ def parse_ndarray(value):
 def SignalHandler(signum, frame):
     ani.pause()
 
+def call_back(event):
+    ax = event.inaxes
+    x_min, x_max = ax.get_xlim()
+    y_min, y_max = ax.get_ylim()
+    range_x = (x_max - x_min) / 10
+    range_y = (y_max - y_min) / 10
+    if event.button == 'up':
+        ax.set(xlim=(x_min + range_x, x_max - range_x))
+        ax.set(ylim=(y_min + range_y, y_max - range_y))
+    elif event.button == 'down':
+        ax.set(xlim=(x_min - range_x, x_max + range_x))
+        ax.set(ylim=(y_min - range_y, y_max + range_y))
+    fig.canvas.draw_idle()
 
+
+mpl.rcParams[u'font.sans-serif'] = ['simhei']
 signal.signal(signal.SIGTERM, SignalHandler)
 
 file_path = './results/traffic.csv'
+#file_path = '~/omnetWorkSpace/ddosattacks/simulations/results/traffic.csv'
 statistic_name = 'NumReceivedIpPackets:vector'
 
 hyperparameter = Hyperparameter()
-hyperparameter.load_limit = 30
+hyperparameter.load_limit = 10
 hyperparameter.test_cycle = 2
 hyperparameter.threshold_low = 2.5
 hyperparameter.threshold_high = 3.5
 
-mpl.rcParams[u'font.sans-serif'] = ['simhei']
-
 fig, ax = plt.subplots()
-ax.set_title('实时流量统计')  # 添加子标题
-ax.set_xlabel('时间', fontsize=10)  # 添加轴标签
-ax.set_ylabel('流量', fontsize=20)
+fig.canvas.manager.set_window_title('异常流量检测系统')
+fig.canvas.mpl_connect('scroll_event', call_back)
+ax.set_title('实时流量分析', fontsize=20)
+ax.set_xlabel('时间（秒）', fontsize=14)
+ax.set_ylabel('流量（包数）', fontsize=14)
 ax.grid()
+plt.rcParams['axes.unicode_minus'] = False
+plt.yticks(size=12)
+plt.xticks(size=12)
 
 detecter = Detecter(ax, file_path, statistic_name, hyperparameter)
 
