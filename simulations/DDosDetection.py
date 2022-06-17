@@ -82,8 +82,7 @@ class Detecter:
         self.traffic = np.zeros(self.max_time, dtype=float)
         for t in range(0, self.max_time):
             self.traffic[t] = self.recived_packets[indexPacketNum[t]]
-        self.traffic = np.diff(self.traffic)
-        self.traffic = np.insert(self.traffic, 0, 0)
+        self.traffic = np.insert(np.diff(self.traffic), 0, 0)
 
     def Mu(self, t):
         if self.traffic[t] < (self.threshold_low * self.traffic_mean[t]):
@@ -131,7 +130,6 @@ class Detecter:
                     self.traffic_mean[t] = ((t - 1) * self.traffic_mean[t - 1] + self.traffic[t]) / t
                 mu = self.Mu(t)
                 if mu > 0:
-                    self.test_cycle += 1
                     a += 1
                     A = max(mu, last_mu) if self.dvar[t] < self.dvar[t - 1] else mu
                     if a >= s:
@@ -163,13 +161,13 @@ class Detecter:
             # 更新坐标轴
             xmin, xmax = ax.get_xlim()
             if self.max_time > xmax:
-                ax.set_xlim(0, 1.05 * self.max_time)
+                ax.set_xlim(0, 1.005 * self.max_time)
                 ax.figure.canvas.draw()
-            ymin, ymax = ax.get_ylim()
 
+            ymin, ymax = ax.get_ylim()
             max_statistic_value = np.max(np.append(np.append(self.traffic, self.traffic_mean), self.dvar))
             if max_statistic_value > ymax:
-                ax.set_ylim(0, 1.05 * max_statistic_value)
+                ax.set_ylim(0, 1.005 * max_statistic_value)
                 ax.figure.canvas.draw()
 
             # 更新折线
@@ -204,12 +202,12 @@ def call_back(event):
 mpl.rcParams[u'font.sans-serif'] = ['simhei']
 signal.signal(signal.SIGTERM, SignalHandler)
 
-file_path = './results/traffic.csv'
-#file_path = '~/omnetWorkSpace/ddosattacks/simulations/results/traffic.csv'
+#file_path = './results/traffic.csv'
+file_path = '~/omnetWorkSpace/ddosattacks/simulations/results/traffic.csv'
 statistic_name = 'NumReceivedIpPackets:vector'
 
 hyperparameter = Hyperparameter()
-hyperparameter.load_limit = 10
+hyperparameter.load_limit = 30
 hyperparameter.test_cycle = 2
 hyperparameter.threshold_low = 2.5
 hyperparameter.threshold_high = 3.5
