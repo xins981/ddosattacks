@@ -50,6 +50,9 @@ class Detecter:
         self.ax.add_line(self.line_alert_traffic)
         self.ax.add_line(self.line_dvar)
         ax.legend(loc='best')
+        self.show_range_x = 50
+        self.ax.set_xlim(0, self.show_range_x)
+
     
     def GetVector(self):
         try:
@@ -161,13 +164,16 @@ class Detecter:
             # 更新坐标轴
             xmin, xmax = ax.get_xlim()
             if self.max_time > xmax:
-                ax.set_xlim(0, 1.005 * self.max_time)
+                ax.set_xlim(xmax-10, xmax+self.show_range_x)
                 ax.figure.canvas.draw()
 
+            xmin, xmax = ax.get_xlim()
+            xmin = int(xmin)
+            xmax = int(xmax)
             ymin, ymax = ax.get_ylim()
-            max_statistic_value = np.max(np.append(np.append(self.traffic, self.traffic_mean), self.dvar))
+            max_statistic_value = np.max(np.append(np.append(self.traffic[xmin:xmax+1], self.traffic_mean[xmin:xmax+1]), self.dvar[xmin:xmax+1]))
             if max_statistic_value > ymax:
-                ax.set_ylim(0, 1.005 * max_statistic_value)
+                ax.set_ylim(-0.05 * max_statistic_value, 1.02 * max_statistic_value)
                 ax.figure.canvas.draw()
 
             # 更新折线
@@ -191,19 +197,16 @@ def call_back(event):
     range_x = (x_max - x_min) / 10
     range_y = (y_max - y_min) / 10
     if event.button == 'up':
-        ax.set(xlim=(x_min + range_x, x_max - range_x))
-        ax.set(ylim=(y_min + range_y, y_max - range_y))
+        ax.set(xlim=(x_min + range_x, x_max - range_x), ylim=(y_min + range_y, y_max - range_y))
     elif event.button == 'down':
-        ax.set(xlim=(x_min - range_x, x_max + range_x))
-        ax.set(ylim=(y_min - range_y, y_max + range_y))
+        ax.set(xlim=(x_min - range_x, x_max + range_x), ylim=(y_min - range_y, y_max + range_y))
     fig.canvas.draw_idle()
 
 
 mpl.rcParams[u'font.sans-serif'] = ['simhei']
 signal.signal(signal.SIGTERM, SignalHandler)
 
-#file_path = './results/traffic.csv'
-file_path = '~/omnetWorkSpace/ddosattacks/simulations/results/traffic.csv'
+file_path = './results/traffic.csv'
 statistic_name = 'NumReceivedIpPackets:vector'
 
 hyperparameter = Hyperparameter()
@@ -216,8 +219,8 @@ fig, ax = plt.subplots()
 fig.canvas.manager.set_window_title('异常流量检测系统')
 fig.canvas.mpl_connect('scroll_event', call_back)
 ax.set_title('实时流量分析', fontsize=20)
-ax.set_xlabel('时间（秒）', fontsize=14)
-ax.set_ylabel('流量（包数）', fontsize=14)
+ax.set_xlabel('时间（仿真秒）', fontsize=14)
+ax.set_ylabel('流量（数据包/秒）', fontsize=14)
 ax.grid()
 plt.rcParams['axes.unicode_minus'] = False
 plt.yticks(size=12)
