@@ -43,12 +43,12 @@ class Detecter:
         self.line_normal_traffic = Line2D(self.time, self.traffic, linewidth=2, color='tab:green', label='正常流量')
         self.line_alert_traffic = Line2D(self.time, self.traffic, linewidth=2, color='tab:red', label='异常流量')
         self.line_traffic_mean = Line2D(self.time, self.traffic_mean, linewidth=2, color='tab:orange', label='流量均值', linestyle='--')
-        self.line_dvar = Line2D(self.time, self.traffic, linewidth=2, color='#9467bd', linestyle='-.', label='差分方差')
+        # self.line_dvar = Line2D(self.time, self.traffic, linewidth=2, color='#9467bd', linestyle='-.', label='差分方差')
 
         self.ax.add_line(self.line_traffic_mean)
         self.ax.add_line(self.line_normal_traffic)
         self.ax.add_line(self.line_alert_traffic)
-        self.ax.add_line(self.line_dvar)
+        # self.ax.add_line(self.line_dvar)
         ax.legend(loc='best')
         self.show_range_x = 50
         self.ax.set_xlim(0, self.show_range_x)
@@ -99,7 +99,8 @@ class Detecter:
 
     def Dvar(self, t):
         if t < 2:
-            return 0
+            self.dvar[t] = 0
+            return
         z = self.traffic[t] - self.traffic[t-1]
         first = (t - 2) * self.dvar[t - 1] + np.square(z)
         second = t - 1
@@ -171,7 +172,7 @@ class Detecter:
             xmin = int(xmin)
             xmax = int(xmax)
             ymin, ymax = ax.get_ylim()
-            max_statistic_value = np.max(np.append(np.append(self.traffic[xmin:xmax+1], self.traffic_mean[xmin:xmax+1]), self.dvar[xmin:xmax+1]))
+            max_statistic_value = np.max(np.append(self.traffic[xmin:xmax+1], self.traffic_mean[xmin:xmax+1]))
             if max_statistic_value > ymax:
                 ax.set_ylim(-0.05 * max_statistic_value, 1.02 * max_statistic_value)
                 ax.figure.canvas.draw()
@@ -180,9 +181,9 @@ class Detecter:
             self.line_normal_traffic.set_data(self.normal_time, self.traffic)
             self.line_alert_traffic.set_data(self.alert_time, self.traffic)
             self.line_traffic_mean.set_data(self.time, self.traffic_mean)
-            self.line_dvar.set_data(self.time, self.dvar)
+            # self.line_dvar.set_data(self.time, self.dvar)
 
-            return self.line_traffic_mean, self.line_normal_traffic, self.line_alert_traffic, self.line_dvar
+            return self.line_traffic_mean, self.line_normal_traffic, self.line_alert_traffic,
 
 def parse_ndarray(value):
     return np.fromstring(value, sep=' ') if value else None

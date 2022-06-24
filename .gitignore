@@ -2,7 +2,7 @@
 /out/
 /.settings/
 
-
+*.anf
 .[!g]*
 *.txt
 Makefile
